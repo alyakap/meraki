@@ -116,9 +116,13 @@ function endsWith(input, string) {
 */
 const guid= function (size=32){
     let string="abcdefghijklmnopqrstuvwxyz0123456789"
+        alpLen=string.length;
+
     let result=""
+
     for (let i=0; i<=size; i++){
-        return result+=string.charAt(Math.floor(Math.random()*size))
+     result+=string.charAt(Math.floor(Math.random()*size))
     }
+    return result;
 }
 
