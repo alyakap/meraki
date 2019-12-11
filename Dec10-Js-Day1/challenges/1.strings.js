@@ -79,3 +79,16 @@ const isLowerCaseAt= function (str, place){
     }
     return state;
 }
+//woww - possible answer
+function isUpperCaseAt(str, index) {
+    return str.charAt(index).toUpperCase() === str.charAt(index);
+       }
+
+
+
+/*    
+8-Write a JavaScript function to test whether a string ends with a specified string.
+	console.log(endsWith('JS string exercises', 'exercises'));
+		true
+
+*/
