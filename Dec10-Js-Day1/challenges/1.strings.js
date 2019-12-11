@@ -49,3 +49,8 @@ const string_chop = function(str="", chk=0){
 	console.log(truncate_string("Robin Singh",4));
 		"Robi"
 */
+const truncate_string = function(str="", size=0){
+    
+    return str.substr(0,size);
+
+}
