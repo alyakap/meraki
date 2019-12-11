@@ -100,9 +100,25 @@ const endsWith= function (fullStr, str){
         return state=false
     }
 }
+
 // OMGGG - another super answer
 function endsWith(input, string) {
     var index = input.length - string.length;
     return index >= 0 && input.indexOf(string, index) > -1;
+}
+
+/*    
+9- Write a JavaScript function to get unique guid (an acronym for 'Globally Unique Identifier?) of the specified length, or 32 by default.
+	console.log(guid());
+		"hRYilcoV7ajokxsYFl1dba41AyE0rUQR"
+	console.log(guid(15));
+		"b7pwBqrZwqaDrex"
+*/
+const guid= function (size=32){
+    let string="abcdefghijklmnopqrstuvwxyz0123456789"
+    let result=""
+    for (let i=0; i<=size; i++){
+        return result+=string[(Math.random()*size)]
+    }
 }
 
