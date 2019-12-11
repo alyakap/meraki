@@ -17,3 +17,26 @@ const insert = function(s1,s2="",p=0){
 }
 
 console.log(insert('heo','ll',2))
+
+/*    
+4- Write a JavaScript function to chop a string into chunks of a given length.
+	console.log(string_chop('w3resource')); 
+		["w3resource"] 
+	console.log(string_chop('w3resource',2)); 
+		["w3", "re", "so", "ur", "ce"] 
+	console.log(string_chop('w3resource',3));
+		["w3r", "eso", "urc", "e"]
+*/
+
+const string_chop = function(str, chk=0){
+    const numberOfChunks= Math.ceil(str.lenght/chk)
+    let array=[]
+    let x=0;
+    for (let i = 0;  x < numberOfChunks; i++) {
+        x+=chk
+        array.push( str.substr(x, chk))
+      }
+    
+    return array;
+}
+
