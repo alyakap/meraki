@@ -118,7 +118,7 @@ const guid= function (size=32){
     let string="abcdefghijklmnopqrstuvwxyz0123456789"
     let result=""
     for (let i=0; i<=size; i++){
-        return result+=string[(Math.random()*size)]
+        return result+=string.charAt(Math.floor(Math.random()*size))
     }
 }
 
