@@ -71,7 +71,7 @@ return str.split('').sort().join('').trim();
 
 const isLowerCaseAt= function (str, place){
     let state=false;
-    if (str[place]===str[place].toLowerCase()) {
+    if (str[place-1]===str[place-1].toLowerCase()) {
         state=true;
     }
     else {
