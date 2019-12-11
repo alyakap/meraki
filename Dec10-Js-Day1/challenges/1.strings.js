@@ -92,3 +92,12 @@ function isUpperCaseAt(str, index) {
 		true
 
 */
+const endsWith= function (fullStr, str){
+    let state=false;
+    if (fullStr.indexOf(str, fullStr.length-str.length)){
+        return state=true
+    } else{
+        return state=false
+    }
+}
+
