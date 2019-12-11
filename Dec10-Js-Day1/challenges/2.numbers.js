@@ -4,9 +4,9 @@
 	console.log(result);
 */
 const generateMultiplicationTable=function(number){
-    let result=" "
-    for (let i=0; i<10; i++){
-        result+= i*number+" " 
+    let result=[];
+    for (let i=0; i<1000; i++){
+        result.push( i*number)
     }
     return result;
 }
@@ -15,7 +15,19 @@ const generateMultiplicationTable=function(number){
 2. extension of first challenge:
 	Every time a value in the array is divisible by 20 add an (asterisk)* to it  
 */
-
+const generateMultiplicationTable=function(number){
+    let result=[];
+    for (let i=0; i<1000; i++){
+        if ((i*number)%20===0){
+            result.push(i*number+"*")
+        }
+        else{
+            result.push(i*number)
+        }
+    }
+    
+    return result;
+}
 
 /*
 3. Write a Javascript function to return wether a value is divisible by a certain number
