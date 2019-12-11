@@ -93,11 +93,16 @@ function isUpperCaseAt(str, index) {
 
 */
 const endsWith= function (fullStr, str){
-    let state=false;
+    let state=false; // why it is saying I am not using "state"
     if (fullStr.indexOf(str, fullStr.length-str.length)>-1){
         return state=true
     } else{
         return state=false
     }
+}
+// OMGGG - another super answer
+function endsWith(input, string) {
+    var index = input.length - string.length;
+    return index >= 0 && input.indexOf(string, index) > -1;
 }
 
