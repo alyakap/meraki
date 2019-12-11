@@ -28,15 +28,24 @@ console.log(insert('heo','ll',2))
 		["w3r", "eso", "urc", "e"]
 */
 
-const string_chop = function(str, chk=0){
-    const numberOfChunks= Math.ceil(str.lenght/chk)
+const string_chop = function(str="", chk=0){
+    const numberOfChunks= Math.ceil(str.length/chk)
     let array=[]
     let x=0;
-    for (let i = 0;  x < numberOfChunks; i++) {
-        x+=chk
+    if (chk==0){array.push(str)} else{
+    for (let i = 0;  i < numberOfChunks; i++) {
+        
         array.push( str.substr(x, chk))
+        x+=chk
       }
+    }
     
     return array;
 }
 
+
+/*    
+5-Write a JavaScript function to truncate a string to a certain length.
+	console.log(truncate_string("Robin Singh",4));
+		"Robi"
+*/
