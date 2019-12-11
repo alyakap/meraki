@@ -94,7 +94,7 @@ function isUpperCaseAt(str, index) {
 */
 const endsWith= function (fullStr, str){
     let state=false;
-    if (fullStr.indexOf(str, fullStr.length-str.length)){
+    if (fullStr.indexOf(str, fullStr.length-str.length)>-1){
         return state=true
     } else{
         return state=false
