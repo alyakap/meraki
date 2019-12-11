@@ -59,7 +59,22 @@ const truncate_string = function(str="", size=0){
 	console.log(alphabetize_string('United States'));
 		"SUadeeinsttt"
 */
-function alphabetize_string(str="") 
+const alphabetize_string=function alphabetize_string(str="") 
 {
 return str.split('').sort().join('').trim();
+}
+/*    
+7- Write a JavaScript function to test whether the character at the provided (character) index is lower case.
+	console.log(isLowerCaseAt ('Js STRING EXERCISES', 1));
+		true
+*/
+const isLowerCaseAt= function (str, place){
+    let state=false;
+    if (str[place]===str[place].toLowerCase()) {
+        state=true;
+    }
+    else {
+        state=false;
+    }
+    return state;
 }
