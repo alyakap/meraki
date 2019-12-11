@@ -68,6 +68,7 @@ return str.split('').sort().join('').trim();
 	console.log(isLowerCaseAt ('Js STRING EXERCISES', 1));
 		true
 */
+
 const isLowerCaseAt= function (str, place){
     let state=false;
     if (str[place]===str[place].toLowerCase()) {
