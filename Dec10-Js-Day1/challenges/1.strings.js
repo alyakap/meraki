@@ -54,3 +54,12 @@ const truncate_string = function(str="", size=0){
     return str.substr(0,size);
 
 }
+/*    
+6- Write a JavaScript function to alphabetize a given string.
+	console.log(alphabetize_string('United States'));
+		"SUadeeinsttt"
+*/
+function alphabetize_string(str="") 
+{
+return str.split('').sort().join('').trim();
+}
