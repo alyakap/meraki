@@ -1,5 +1,8 @@
 const fs = require('fs')
 const encoder = require('turkish-char-encoding');
+//study require 
+
+
 /*
 execute this file in terminal:  node index ./subtitles
 */
