@@ -25,34 +25,44 @@ given:
 returned array:
 	[20,60,45]
 */ 
-9. Write a Javascript function to generate a random color in format rgb(0,0,0);
 
-10. Write a JavaScript program to find the types of a given angle.  Go to the editor	
+
+// 9. Write a Javascript function to generate a random color in format rgb(0,0,0);
+
+
+
+/* 10. Write a JavaScript program to find the types of a given angle.  Go to the editor	
   Types of angles:
     Acute angle: An angle between 0 and 90 degrees.
     Right angle: An 90 degree angle.
     Obtuse angle: An angle between 90 and 180 degrees.
     Straight angle: A 180 degree angle.
+*/
 
 
+//11. Write a JavaScript function to merge two arrays and removes all duplicates elements.
+//FROM HERE NO FOR LOOPS ALLOWED
 
-11. Write a JavaScript function to merge two arrays and removes all duplicates elements.
-
-FROM HERE NO FOR LOOPS ALLOWED
-
+/*
 12. given [2,1,6,4]
     expected => [8,1,216,64] => the power 3
 
     thirdPower([2,1,6,4])
+*/
 
-
+/*
 13. given [2,1,6,4]
     expected => [8,1,216,64] => the power N
     nthPower([2,1,6,4],16)
+*/
 
+
+/*
 14. given [2,1,6,4]
     calc avg
     calc sum    (reduce)
+*/
+
 
 15. given ["Ellen","bert","Bart","zaki","Sandra","Soroush"]
   remove all the names that do not start with a capital
