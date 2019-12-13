@@ -27,7 +27,15 @@ const protect_email = function(email){
 /**************/
 
 
-//3)
+/*
+3- Write a JavaScript function to insert a string within a string at a particular position (default is 1).
+	console.log(insert('We are doing some exercises.')); 
+		"We are doing some exercises." 
+	console.log(insert('We are doing some exercises.','JavaScript ')); 
+		"JavaScript We are doing some exercises." 
+	console.log(insert('We are doing some exercises.','JavaScript ',18));
+		"We are doing some JavaScript exercises."	
+*/
 const insert = function(s1,s2="",p=0){
     // const str2 = str2 || ""; => default params in es5
     // const position = position || 0; => default params in es5
