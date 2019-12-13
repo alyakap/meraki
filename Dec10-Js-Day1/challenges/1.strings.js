@@ -1,4 +1,10 @@
-//1)
+/*
+1- Write a JavaScript function to check whether a string is blank or not.
+	console.log(is_Blank('')); 
+		true 
+	console.log(is_Blank('abc'));
+        false
+*/
 const is_blank = s => s ? true : false;
 
 /***************/ //better solution from David
@@ -18,7 +24,6 @@ const protect_email = function(email){
 
 
 //3)
-
 const insert = function(s1,s2="",p=0){
     // const str2 = str2 || ""; => default params in es5
     // const position = position || 0; => default params in es5
