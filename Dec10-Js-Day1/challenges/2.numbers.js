@@ -25,7 +25,6 @@ const generateMultiplicationTable=function(number){
             result.push(i*number)
         }
     }
-    
     return result;
 }
 
@@ -35,7 +34,7 @@ const generateMultiplicationTable=function(number){
 	isDivisible(333,7)
 	=> false
 */
-
+const isDivisible= (n1, n2)=> (n1%n2===0)
 
 /*
 4. Write a Javascript function that return an array with even numbers between a range
