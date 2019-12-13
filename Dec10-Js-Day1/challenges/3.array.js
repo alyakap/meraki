@@ -64,9 +64,9 @@ returned array:
 */
 
 
-15. given ["Ellen","bert","Bart","zaki","Sandra","Soroush"]
-  remove all the names that do not start with a capital
+// 15. given ["Ellen","bert","Bart","zaki","Sandra","Soroush"]
+//  remove all the names that do not start with a capital
 
-16. Write a Javascript function to find how many times a certain number occurs in that array.
+// 16. Write a Javascript function to find how many times a certain number occurs in that array.
 
-17. Write a JavaScript program to find the most frequent item of an array.
+// 17. Write a JavaScript program to find the most frequent item of an array.
