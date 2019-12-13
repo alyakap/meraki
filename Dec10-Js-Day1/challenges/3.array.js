@@ -11,12 +11,12 @@
 // var myNames = ["John","Cindy","Omer","Barbie","Barbie"];
 // removeSpecificelement(myNames,"Barbie");
 
-6. Write a function to remove all strings with less than X characters 
-from an array of strings
+// 6. Write a function to remove all strings with less than X characters 
+//from an array of strings
 
-7. Write a JavaScript function to generate an array with the first X Fibonacci numbers.
+// 7. Write a JavaScript function to generate an array with the first X Fibonacci numbers.
 
-8. Write a JavaScript function that returns array elements larger than a number
+/* 8. Write a JavaScript function that returns array elements larger than a number
 
 given: 
 	var numbers = [5,2,20,60,45];
@@ -24,7 +24,7 @@ given:
 
 returned array:
 	[20,60,45]
-
+*/ 
 9. Write a Javascript function to generate a random color in format rgb(0,0,0);
 
 10. Write a JavaScript program to find the types of a given angle.  Go to the editor	
