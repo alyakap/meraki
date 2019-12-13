@@ -22,8 +22,6 @@ paths.forEach(function(path){
 })
 
 
-
-
 const allWordsArray = allText
   .trim()
   .toLowerCase()
