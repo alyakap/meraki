@@ -2,14 +2,14 @@
 
 // 2. Write a JavaScript function to get a random item from an array.
 
-3. Write a JavaScript program which accept a string as input and swap the case of each character. 
-For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
+// 3. Write a JavaScript program which accept a string as input and swap the case of each character. 
+// For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
 
-4.Write a JavaScript function to compute the sum of an array of integers.
+// 4.Write a JavaScript function to compute the sum of an array of integers.
 
-5. Write a JavaScript function to remove a specific element from an array 
-var myNames = ["John","Cindy","Omer","Barbie","Barbie"];
-removeSpecificelement(myNames,"Barbie");
+// 5. Write a JavaScript function to remove a specific element from an array 
+// var myNames = ["John","Cindy","Omer","Barbie","Barbie"];
+// removeSpecificelement(myNames,"Barbie");
 
 6. Write a function to remove all strings with less than X characters 
 from an array of strings
