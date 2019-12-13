@@ -11,7 +11,11 @@ const is_blank = s => s ? true : false;
 // const is_blank = s => s === ""
 /**************/
 
-//2)
+/*
+2- Write a JavaScript function to hide email addresses to protect from unauthorized user.
+	console.log(protect_email("robin_singh@example.com"));
+		"robin...@example.com"
+*/
 const protect_email = function(email){
     const parts = email.split('@'); // [0] => "robin_singh", [1] => "example.com"
     const firstPart = parts[0].substr(0,5);
