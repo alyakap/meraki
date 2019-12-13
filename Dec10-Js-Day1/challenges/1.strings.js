@@ -1,7 +1,7 @@
 //1)
 const is_blank = s => s ? true : false;
 
-/***************/
+/***************/ //better solution from David
 // const is_blank = s => s === ""
 /**************/
 
@@ -115,6 +115,8 @@ function isUpperCaseAt(str, index) {
 		true
 
 */
+
+
 // You do not need to creat a variabel to hold the boolean value
 // Just return the check
 const endsWith = function (fullStr, str){
