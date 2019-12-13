@@ -1,12 +1,21 @@
 //1)
 const is_blank = s => s ? true : false;
 
+/***************/
+// const is_blank = s => s === ""
+/**************/
+
 //2)
 const protect_email = function(email){
     const parts = email.split('@'); // [0] => "robin_singh", [1] => "example.com"
     const firstPart = parts[0].substr(0,5);
     return firstPart+"...@"+parts[1]
 }
+
+/***************/
+// const is_blank = s => s === ""
+/**************/
+
 
 //3)
 
@@ -34,12 +43,10 @@ const string_chop = function(str="", chk=0){
     let x=0;
     if (chk==0){array.push(str)} else{
     for (let i = 0;  i < numberOfChunks; i++) {
-        
         array.push( str.substr(x, chk))
         x+=chk
       }
     }
-    
     return array;
 }
 
@@ -59,16 +66,25 @@ const truncate_string = function(str="", size=0){
 	console.log(alphabetize_string('United States'));
 		"SUadeeinsttt"
 */
-const alphabetize_string=function alphabetize_string(str="") 
-{
-return str.split('').sort().join('').trim();
+const alphabetize_string=function alphabetize_string(str="") {
+   return str.split('').sort().join('').trim();
 }
+/***************/
+// no need to repeat the function name
+// const alphabetize_string = function(str="") {
+//   return str.split('').sort().join('').trim();
+// }
+// or in one line with arrow function
+// const alphabetize_string = str="" => str.split('').sort().join('').trim();
+// }
+//
+/***************/
 /*    
 7- Write a JavaScript function to test whether the character at the provided (character) index is lower case.
 	console.log(isLowerCaseAt ('Js STRING EXERCISES', 1));
 		true
 */
-
+// This one is not correct. You should not do -1
 const isLowerCaseAt= function (str, place){
     let state=false;
     if (str[place-1]===str[place-1].toLowerCase()) {
@@ -79,6 +95,13 @@ const isLowerCaseAt= function (str, place){
     }
     return state;
 }
+
+/***************/
+// Possible solution
+// const isLowerCaseAt = (str, place) => str[place]===str[place].toLowerCase()
+/***************/
+
+
 //woww - possible answer
 function isUpperCaseAt(str, index) {
     return str.charAt(index).toUpperCase() === str.charAt(index);
@@ -92,7 +115,9 @@ function isUpperCaseAt(str, index) {
 		true
 
 */
-const endsWith= function (fullStr, str){
+// You do not need to creat a variabel to hold the boolean value
+// Just return the check
+const endsWith = function (fullStr, str){
     let state=false; // why it is saying I am not using "state"
     if (fullStr.indexOf(str, fullStr.length-str.length)>-1){
         return state=true
@@ -100,6 +125,11 @@ const endsWith= function (fullStr, str){
         return state=false
     }
 }
+
+/***************************
+// posible solution
+// const endsWith = (fullStr, str) => fullStr.indexOf(str, fullStr.length-str.length)!=-1
+****************************/
 
 // OMGGG - another super answer
 function endsWith(input, string) {
