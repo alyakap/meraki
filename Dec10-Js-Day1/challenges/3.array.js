@@ -1,6 +1,6 @@
 // 1. Write a JavaScript function to check if a certain word is a Palindrome.
 
-2. Write a JavaScript function to get a random item from an array.
+// 2. Write a JavaScript function to get a random item from an array.
 
 3. Write a JavaScript program which accept a string as input and swap the case of each character. 
 For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
