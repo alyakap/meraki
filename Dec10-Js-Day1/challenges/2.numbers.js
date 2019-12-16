@@ -46,8 +46,9 @@ const getEvenNumbersInRange=function(n1,n2){
         if (i%2===0){
             arr.push(i)
         }
-        return arr
+        
     }
+    return arr
 }
 /*
 5. Write a Javascript function that calculate the distance between two coordinates.
