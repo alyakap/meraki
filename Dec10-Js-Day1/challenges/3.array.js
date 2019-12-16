@@ -62,7 +62,14 @@ const lessThanXLength=(arr, number)=>{
 
 // 7. Write a JavaScript function to generate an array with the first X Fibonacci numbers.
 
-
+const generateFib=lgt=>{
+    arr=[]
+    sum=
+    for (let i=0; i<lgt; i++){
+        sum+=i+i
+        arr.push(i)
+    }
+}
 
 /* 
 8. Write a JavaScript function that returns array elements larger than a number
