@@ -7,8 +7,8 @@ function palindrome(str) {
 // 2. Write a JavaScript function to get a random item from an array.
 
 function random(arr){
-    let lgt=arr.length
-    return arr[Math.floor(lgt*Math.random())]
+    
+    return arr[Math.floor(arr.length*Math.random())]
 }
 
 // 3. Write a JavaScript program which accept a string as input and swap the case of each character. 
