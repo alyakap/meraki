@@ -80,7 +80,9 @@ given:
 returned array:
 	[20,60,45]
 */ 
-
+const largerThanXNumber=(arr, number)=>{
+    return arr.filter(e=>e>number)
+}
 
 
 // 9. Write a Javascript function to generate a random color in format rgb(0,0,0);
