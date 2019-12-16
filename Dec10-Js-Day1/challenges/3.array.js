@@ -64,12 +64,11 @@ const lessThanXLength=(arr, number)=>{
 
 const generateFib=lgt=>{
     arr=[]
-    sum=0;
-    for (let i=0; i<lgt; i++){
-        sum+=i+i
+    for (let i=0; i<lgt; i++){     
         arr.push(i)
     }
 }
+///???????? 0 and 1 problem?
 
 /* 
 8. Write a JavaScript function that returns array elements larger than a number
