@@ -1,9 +1,15 @@
 // 1. Write a JavaScript function to check if a certain word is a Palindrome.
-
+function palindrome(str) {
+    let reverseStr = str.split('').reverse().join(''); 
+    return reverseStr === str;
+  }
 
 // 2. Write a JavaScript function to get a random item from an array.
 
-
+function random(arr){
+    let lgt=arr.length
+    return arr[Math.floor(lgt*Math.random())]
+}
 
 // 3. Write a JavaScript program which accept a string as input and swap the case of each character. 
 // For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
