@@ -41,7 +41,10 @@ const sumOfArray= arr=>{
 // var myNames = ["John","Cindy","Omer","Barbie","Barbie"];
 // removeSpecificelement(myNames,"Barbie");
 
-
+const removeSpecificelement=(arr, el)=>{
+    return arr.filter(x=>x!==el)
+    //ask question here
+}
 
 // 6. Write a function to remove all strings with less than X characters 
 //from an array of strings
