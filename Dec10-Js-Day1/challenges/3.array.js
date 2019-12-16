@@ -119,9 +119,10 @@ const typeOfAngle=angle=>{
 
 //11. Write a JavaScript function to merge two arrays and removes all duplicates elements.
 //FROM HERE NO FOR LOOPS ALLOWED
-const mergeArray=(arr1, arr2){
-    
+const mergeArray=(arr1, arr2)=>{
+    return [...arr1, ...arr2]
 }
+//ask deduplication without for loop
 
 
 /*
@@ -130,13 +131,19 @@ const mergeArray=(arr1, arr2){
 
     thirdPower([2,1,6,4])
 */
-
+const givenPower=(arr, number)=>{
+    function powerOf(i){
+        return Math.pow(i, number)
+    }
+    return arr.map(powerOf)
+}
 
 /*
 13. given [2,1,6,4]
     expected => [8,1,216,64] => the power N
     nthPower([2,1,6,4],16)
 */
+
 
 
 /*
