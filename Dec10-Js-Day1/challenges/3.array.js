@@ -29,7 +29,13 @@ const swapCase = function(str){
 
 // 4.Write a JavaScript function to compute the sum of an array of integers.
 
-
+const sumOfArray= arr=>{
+    let sum=0;
+    for(let i=0; i<arr.length; i++){
+        sum+=arr[i];
+    }
+    return sum
+}
 
 // 5. Write a JavaScript function to remove a specific element from an array 
 // var myNames = ["John","Cindy","Omer","Barbie","Barbie"];
