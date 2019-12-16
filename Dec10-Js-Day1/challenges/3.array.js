@@ -102,7 +102,20 @@ const randomRgb=()=>{
     Obtuse angle: An angle between 90 and 180 degrees.
     Straight angle: A 180 degree angle.
 */
-
+const typeOfAngle=angle=>{
+    if (angle<90){
+        console.log("this is acute angle")
+    } else if (angle==90){
+        console.log("this is right angle")
+    } else if (angle > 90 && angle < 180){
+        console.log("this is obtuse angle")
+    } else if (angle==180){
+        console.log("this is Straight angle")
+    }
+    else{
+        console.log("no description")
+    }
+}
 
 //11. Write a JavaScript function to merge two arrays and removes all duplicates elements.
 //FROM HERE NO FOR LOOPS ALLOWED
