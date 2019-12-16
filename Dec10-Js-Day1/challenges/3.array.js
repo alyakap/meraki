@@ -138,6 +138,7 @@ const givenPower=(arr, number)=>{
     return arr.map(powerOf)
 }
 
+
 /*
 13. given [2,1,6,4]
     expected => [8,1,216,64] => the power N
