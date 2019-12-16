@@ -144,7 +144,12 @@ const givenPower=(arr, number)=>{
     expected => [8,1,216,64] => the power N
     nthPower([2,1,6,4],16)
 */
-
+const givenPower=(arr, number)=>{
+    function powerOf(i){
+        return Math.pow(i, number)
+    }
+    return arr.map(powerOf)
+}
 
 
 /*
