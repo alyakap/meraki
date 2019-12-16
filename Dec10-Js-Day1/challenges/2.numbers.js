@@ -11,6 +11,12 @@ const generateMultiplicationTable=function(number){
     return result;
 }
 
+/* Alternative
+const multiplication = nr => "x".repeat(1000).split("").fill(1,0,999).map((el,i)=>nr*i)
+
+const multiplication = (nr,iterations) => "x".repeat(iterations).split("").fill(1,0,iterations-1).map((el,i)=>nr*i)
+*/
+
 /*
 2. extension of first challenge:
 	Every time a value in the array is divisible by 20 add an (asterisk)* to it  
@@ -35,7 +41,9 @@ const generateMultiplicationTable=function(number){
 	=> false
 */
 const isDivisible= (n1, n2)=> (n1%n2===0)
-
+/*
+	or const isDivisible = (n1, n2) => n1%n2===0
+*/
 /*
 4. Write a Javascript function that return an array with even numbers between a range
 	getEvenNumbersInRange(56,1211)
