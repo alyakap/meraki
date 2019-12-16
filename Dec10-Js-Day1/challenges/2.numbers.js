@@ -40,7 +40,15 @@ const isDivisible= (n1, n2)=> (n1%n2===0)
 4. Write a Javascript function that return an array with even numbers between a range
 	getEvenNumbersInRange(56,1211)
 */
-
+const getEvenNumbersInRange=function(n1,n2){
+    let arr=[];
+    for (let i=n1; i<=n2; i++){
+        if (i%2===0){
+            arr.push(i)
+        }
+        return arr
+    }
+}
 /*
 5. Write a Javascript function that calculate the distance between two coordinates.
 	getDistance([20,100],[50,800])
