@@ -13,7 +13,18 @@ function random(arr){
 
 // 3. Write a JavaScript program which accept a string as input and swap the case of each character. 
 // For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
-
+const swapCase = function(str){
+    let newStr = "";
+    for(let i = 0; i<str.length; i++){
+        if(str[i] === str[i].toLowerCase()){
+            newStr += str[i].toUpperCase();
+        } else {
+            newStr += str[i].toLowerCase();
+        }
+    }
+    
+    return newStr;
+}
 
 
 // 4.Write a JavaScript function to compute the sum of an array of integers.
