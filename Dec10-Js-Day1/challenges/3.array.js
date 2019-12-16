@@ -86,7 +86,13 @@ const largerThanXNumber=(arr, number)=>{
 
 
 // 9. Write a Javascript function to generate a random color in format rgb(0,0,0);
-
+const randomRgb=()=>{
+    var r = Math.floor(Math.random()*256);          
+    var g = Math.floor(Math.random()*256);          
+    var b = Math.floor(Math.random()*256);          
+    var rgb = 'rgb(' + r + ',' + g + ',' + b + ')';
+    return rgb;
+}
 
 
 /* 10. Write a JavaScript program to find the types of a given angle.  Go to the editor	
