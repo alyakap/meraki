@@ -50,7 +50,7 @@ const removeSpecificelement=(arr, el)=>{
 //from an array of strings
 
 const lessThanXLength=(arr, number)=>{
-    return arr.filter(str=>str.length>number)
+    return arr.filter(str=>str.length<number)
 }
 
 // 7. Write a JavaScript function to generate an array with the first X Fibonacci numbers.
