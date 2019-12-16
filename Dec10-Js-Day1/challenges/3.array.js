@@ -64,7 +64,7 @@ const lessThanXLength=(arr, number)=>{
 
 const generateFib=lgt=>{
     arr=[]
-    sum=
+    sum=0;
     for (let i=0; i<lgt; i++){
         sum+=i+i
         arr.push(i)
