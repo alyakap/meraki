@@ -3,6 +3,7 @@ function palindrome(str) {
     let reverseStr = str.split('').reverse().join(''); 
     return reverseStr === str;
   }
+// maybe you could try to write this in one line?
 
 // 2. Write a JavaScript function to get a random item from an array.
 
@@ -10,6 +11,7 @@ function random(arr){
     
     return arr[Math.floor(arr.length*Math.random())]
 }
+// maybe you could try to write this in one line?
 
 // 3. Write a JavaScript program which accept a string as input and swap the case of each character. 
 // For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
@@ -28,7 +30,7 @@ const swapCase = function(str){
 
 
 // 4.Write a JavaScript function to compute the sum of an array of integers.
-
+//I prefer you to use a reduce method here
 const sumOfArray= arr=>{
     let sum=0;
     for(let i=0; i<arr.length; i++){
@@ -37,6 +39,10 @@ const sumOfArray= arr=>{
     return sum
 }
 
+
+
+
+
 // 5. Write a JavaScript function to remove a specific element from an array 
 // var myNames = ["John","Cindy","Omer","Barbie","Barbie"];
 // removeSpecificelement(myNames,"Barbie");
@@ -44,6 +50,7 @@ const sumOfArray= arr=>{
 const removeSpecificelement=(arr, el)=>{
     return arr.filter(x=>x!==el)
     //ask question here
+	// shorter version?
 }
 
 // 6. Write a function to remove all strings with less than X characters 
