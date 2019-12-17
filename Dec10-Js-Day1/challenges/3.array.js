@@ -4,7 +4,7 @@ function palindrome(str) {
     return reverseStr === str;
   }
 // maybe you could try to write this in one line?
-
+// const palindrome = str => str===str.split('').reverse().join('');
 // 2. Write a JavaScript function to get a random item from an array.
 
 function random(arr){
@@ -39,6 +39,23 @@ const sumOfArray= arr=>{
     return sum
 }
 
+const sumOfArray = arr => arr.reduce((sum,nr)=>sum+nr,0)
+
+// [2,3,1]
+
+// (0,2)=>return 2
+// (2,3)=>return 5
+// (5,1)=>return 6
+
+// arr.reduce(function(accumulator,nr){
+//     return sum+nr
+// },startNr)
+
+
+
+
+
+
 
 
 
@@ -52,6 +69,9 @@ const removeSpecificelement=(arr, el)=>{
     //ask question here
 	// shorter version?
 }
+
+const removeSpecificelement=(arr, el)=>arr.filter(x=>x!==el)
+
 
 // 6. Write a function to remove all strings with less than X characters 
 //from an array of strings
@@ -70,6 +90,23 @@ const generateFib=lgt=>{
 }
 ///???????? 0 and 1 problem?
 
+const generateFib = lgt => new Array(lgt-2).fill("x").reduce(function(arr){
+    arr.push(arr[arr.length-1]+arr[arr.length-2]);
+    return arr;
+},[0,1])
+
+// "" or '' of `` => new String()
+// 8 or => new Number(8)
+// false => new Boolean(false)
+// never use this way of creating numbers,booleans and Strings because the strict equality check will fail
+
+// you could use this => no problem
+// [] or => new Array();
+// {} or => new Object();
+
+
+
+
 /* 
 8. Write a JavaScript function that returns array elements larger than a number
 
@@ -80,9 +117,7 @@ given:
 returned array:
 	[20,60,45]
 */ 
-const largerThanXNumber=(arr, number)=>{
-    return arr.filter(e=>e>number)
-}
+const largerThanXNumber=(arr, number)=> arr.filter(e=>e>number)
 
 
 // 9. Write a Javascript function to generate a random color in format rgb(0,0,0);
@@ -117,13 +152,22 @@ const typeOfAngle=angle=>{
     }
 }
 
+const typeOfAngle = function(angle){
+    switch(true){
+        case angle==90: console.log("this is right angle");
+        case angle<90: console.log("this is acute angle");
+        case angle > 90 && angle < 180: console.log("this is obtuse angle");
+        case angle==180: console.log("this is straight angle");
+        default: console.log("no description")
+    }
+}
+
+
+
+
 //11. Write a JavaScript function to merge two arrays and removes all duplicates elements.
 //FROM HERE NO FOR LOOPS ALLOWED
-const mergeArray=(arr1, arr2)=>{
-    return [...arr1, ...arr2]
-}
-//ask deduplication without for loop
-
+const mergeArray=(arr1, arr2) => [...new Set([...arr1,...arr2])]
 
 /*
 12. given [2,1,6,4]
@@ -137,6 +181,43 @@ const givenPower=(arr, number)=>{
     }
     return arr.map(powerOf)
 }
+
+
+const givenPower=(arr, number)=> arr.map(el=>Math.pow(el,number))
+
+
+
+
+
+
+
+// [2,4,6,1].map(el=>el*2)
+// [2,4,6,1].map(el=>el*3)
+
+// function powerIze(powerNr){
+//     return function(el){
+//         return el*powerNr
+//     }
+// }
+
+
+// [2,4,6,1].map(powerIze(10))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
