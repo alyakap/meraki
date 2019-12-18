@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>MY MOVIES</h1>
+    <button>LOAD MOVIES</button>
+    <ul></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    <script>
+      const listRef = document.querySelector("ul");
+      const buttonRef = document.querySelector("button");
+
+      //EVENTS
+      buttonRef.addEventListener("click", loadMovies);
+
+      //EVENTHANDLERS
+      function loadMovies() {
+        //doing the request
+        axios.get("http://localhost:1234/movies").then(handleData);
+      }
+
+      //HANDLEDATA
+      function handleData(axiosResponse) {
+        console.log(axiosResponse.data);
+        listRef.innerHTML = axiosResponse.data
+          .map(movie => "<li>" + movie.title + "</li>")
+          .join("");
+      }
+    </script>
+  </body>
+</html>
