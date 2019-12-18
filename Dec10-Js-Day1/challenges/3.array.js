@@ -57,9 +57,6 @@ const sumOfArray = arr => arr.reduce((sum,nr)=>sum+nr,0)
 
 
 
-
-
-
 // 5. Write a JavaScript function to remove a specific element from an array 
 // var myNames = ["John","Cindy","Omer","Barbie","Barbie"];
 // removeSpecificelement(myNames,"Barbie");
@@ -243,8 +240,8 @@ const avg= (arr, sumOfArray)=> sumOfArray/arr.length;
 
 
 
-// 15. given ["Ellen","bert","Bart","zaki","Sandra","Soroush"] remove all the names that do not start with a capital
-
+// 15. given ["Ellen","bert","Bart","zaki","Sandra","Soroush"] remove all the names that do not start with a capita
+const checkFirstLetterCase= arr=>arr.filter(x=> x[0]===x[0].toUpperCase())
 
 
 // 16. Write a Javascript function to find how many times a certain number occurs in that array.
