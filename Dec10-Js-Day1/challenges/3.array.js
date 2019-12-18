@@ -238,6 +238,9 @@ const givenPower=(arr, number)=>{
     calc avg
     calc sum    (reduce)
 */
+const sumOfArray = arr => arr.reduce((sum,nr)=>sum+nr,0)
+const avg= (arr, sumOfArray)=> sumOfArray/arr.length;
+
 
 
 // 15. given ["Ellen","bert","Bart","zaki","Sandra","Soroush"] remove all the names that do not start with a capital
