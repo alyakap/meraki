@@ -245,7 +245,17 @@ const checkFirstLetterCase= arr=>arr.filter(x=> x[0]===x[0].toUpperCase())
 
 
 // 16. Write a Javascript function to find how many times a certain number occurs in that array.
-
+var occuranceCounter = arr.reduce(function(obj, el) {
+    obj[el] = ++obj[el] || 1;
+    return obj;
+  }, {});
 
 
 // 17. Write a JavaScript program to find the most frequent item of an array.
+//dont wanna do it with for loop here is the possible answer ask?
+const getFrequent=arr=>{
+    return arr.sort((a,b) =>
+          arr.filter(v => v===a).length
+        - arr.filter(v => v===b).length
+    ).pop();
+}
