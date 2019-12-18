@@ -5,17 +5,17 @@ function palindrome(str) {
   }
 // maybe you could try to write this in one line?
 // const palindrome = str => str===str.split('').reverse().join('');
+
+
 // 2. Write a JavaScript function to get a random item from an array.
 
-function random(arr){
-    
-    return arr[Math.floor(arr.length*Math.random())]
-}
+const random=arr=> arr[Math.floor(arr.length*Math.random())]
+
 // maybe you could try to write this in one line?
 
 // 3. Write a JavaScript program which accept a string as input and swap the case of each character. 
 // For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
-const swapCase = function(str){
+const swapCase = str=>{
     let newStr = "";
     for(let i = 0; i<str.length; i++){
         if(str[i] === str[i].toLowerCase()){
@@ -24,7 +24,6 @@ const swapCase = function(str){
             newStr += str[i].toLowerCase();
         }
     }
-    
     return newStr;
 }
 
@@ -38,34 +37,14 @@ const sumOfArray= arr=>{
     }
     return sum
 }
-
+//alternatative 
 const sumOfArray = arr => arr.reduce((sum,nr)=>sum+nr,0)
-
-// [2,3,1]
-
-// (0,2)=>return 2
-// (2,3)=>return 5
-// (5,1)=>return 6
-
-// arr.reduce(function(accumulator,nr){
-//     return sum+nr
-// },startNr)
-
-
-
-
-
 
 
 // 5. Write a JavaScript function to remove a specific element from an array 
 // var myNames = ["John","Cindy","Omer","Barbie","Barbie"];
 // removeSpecificelement(myNames,"Barbie");
 
-const removeSpecificelement=(arr, el)=>{
-    return arr.filter(x=>x!==el)
-    //ask question here
-	// shorter version?
-}
 
 const removeSpecificelement=(arr, el)=>arr.filter(x=>x!==el)
 
@@ -73,18 +52,11 @@ const removeSpecificelement=(arr, el)=>arr.filter(x=>x!==el)
 // 6. Write a function to remove all strings with less than X characters 
 //from an array of strings
 
-const lessThanXLength=(arr, number)=>{
-    return arr.filter(str=>str.length<number)
-}
+const lessThanXLength=(arr, number)=>arr.filter(str=>str.length<number)
+
 
 // 7. Write a JavaScript function to generate an array with the first X Fibonacci numbers.
 
-const generateFib=lgt=>{
-    arr=[]
-    for (let i=0; i<lgt; i++){     
-        arr.push(i)
-    }
-}
 ///???????? 0 and 1 problem?
 
 const generateFib = lgt => new Array(lgt-2).fill("x").reduce(function(arr){
@@ -199,20 +171,6 @@ const givenPower=(arr, number)=> arr.map(el=>Math.pow(el,number))
 
 
 // [2,4,6,1].map(powerIze(10))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

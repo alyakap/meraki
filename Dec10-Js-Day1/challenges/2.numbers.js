@@ -61,7 +61,6 @@ const getEvenNumbersInRange=function(n1,n2){
 5. Write a Javascript function that calculate the distance between two coordinates.
 	getDistance([20,100],[50,800])
 */
-const getDistance=function(x1, y1,x2, y2){
-    return Math.sqrt(Math.pow(x1-x2,2)+Math.pow(y1-y2,2))
+const getDistance=(x1, y1,x2, y2)=>Math.sqrt(Math.pow(x1-x2,2)+Math.pow(y1-y2,2))
 
-}
+
