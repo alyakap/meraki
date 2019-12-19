@@ -27,3 +27,17 @@ async function greetCertainName(){
 
 greetCertainName()
 
+
+
+
+// var axios  = require('axios');
+
+// const getMovies = async (callback) => {
+//     const titanic = await axios.get("http://www.omdbapi.com/?apikey=2e3b4604&s=titanic");
+//     const saw = await axios.get("http://www.omdbapi.com/?apikey=2e3b4604&s=saw");
+//     const wars = await axios.get("http://www.omdbapi.com/?apikey=2e3b4604&s=wars");
+//     callback([...titanic.data.Search,...saw.data.Search,...wars.data.Search]);
+// } 
+
+// getMovies(console.log)
+
