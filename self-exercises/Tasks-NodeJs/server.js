@@ -24,7 +24,7 @@ app.get('/client.css',function(req,res){
 
 app.get('/tasks',function(req, res){
     console.log('/tasks was requested'); 
-    const getTasks=tasks.map(task=>`<li>${task}</li>`)
+    const getTasks=tasks.map(task=>`<li>${task.task}</li>`)
     res.send("<ul>Tasks</ul>"+getTasks.join(""))
 })
 
