@@ -12,12 +12,12 @@ app.get('/',function(req,res){
     res.sendFile(path.join(__dirname + '/client.html'));
 })
 
-app.get('/',function(req,res){
+app.get('/client.js',function(req,res){
     console.log("client js");
     res.sendFile(path.join(__dirname + '/client.js'));
 })
 
-app.get('/',function(req,res){
+app.get('/client.css',function(req,res){
     console.log("client css");
     res.sendFile(path.join(__dirname + '/client.css'));
 })
