@@ -16,5 +16,5 @@ app.get('/',function(req,res){
 app.get('/tasks',function(req, res){
     console.log('/tasks was requested'); 
     const getTasks=tasks.map(task=>`<li>${task}</li>`)
-    res.send("<ul>Tasks</ul>"+getTasks)
+    res.send("<ul>Tasks</ul>"+getTasks.join(""))
 })
