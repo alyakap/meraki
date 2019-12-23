@@ -22,11 +22,10 @@ app.get('/client.css',function(req,res){
     res.sendFile(path.join(__dirname + '/client.css'));
 })
 
-// app.get('/tasks',function(req, res){
-//     console.log('/tasks was requested'); 
-//     const getTasks=tasks.map(task=>`<li>${task.task}</li>`)
-//     res.send("<ul>Tasks</ul>"+getTasks.join(""))
-// })
+app.get('/tasks',function(req, res){
+    console.log('/tasks was requested'); 
+    res.send(tasks)
+})
 
 app.get('/tasks/:id',function(req, res){
     const requestedId = req.url.split('/')[2]
