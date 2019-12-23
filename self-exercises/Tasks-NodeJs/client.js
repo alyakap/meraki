@@ -1,3 +1,3 @@
 console.log('message from client') 
 
-axios.get("http://localhost:4657/tasks").then(console.log("hey"))
+axios.get("http://localhost:4657/tasks").then(resp=>console.log(resp))
