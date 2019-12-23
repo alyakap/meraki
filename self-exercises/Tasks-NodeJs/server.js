@@ -1,5 +1,6 @@
 const express=require('express');
 const tasks=require('./data');
+const path=require('path')
 const port=4567;
 
 const app=express(); //instance of express
@@ -8,7 +9,17 @@ app.listen(port);
 
 app.get('/',function(req,res){
     console.log("homepage loaded");
-    res.send('<h1>Tasks App</h1>');
+    res.sendFile(path.join(__dirname + '/client.html'));
+})
+
+app.get('/',function(req,res){
+    console.log("client js");
+    res.sendFile(path.join(__dirname + '/client.js'));
+})
+
+app.get('/',function(req,res){
+    console.log("client css");
+    res.sendFile(path.join(__dirname + '/client.css'));
 })
 
 app.get('/tasks',function(req, res){

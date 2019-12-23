@@ -4,32 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="client.css" media="screen"/>
     <title>Document</title>
 </head>
 <body>
     <h1>Tasks toDo:</h1>
-    <button>Load Tasks</button>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
-    <script>
-        const listTitle = document.querySelector("ul");
-        const button = document.querySelector("button");
-
- 
-        buttonRef.addEventListener("click", loadMovies);
 
 
-        function loadTasks() {
+    <script src="client.js">
 
-        axios.get("http://localhost:4567/home").then(handleData);
-        }
-
-        //HANDLEDATA
-        function handleData(axiosResponse) {
-        console.log(axiosResponse.data);
-        listTitle .innerHTML = axiosResponse.data
-            .map(task => "<li>" + task.title + "</li>")
-            .join("");
-        }
     </script>
 </body>
 </html>
