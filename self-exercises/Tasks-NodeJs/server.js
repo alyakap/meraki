@@ -18,3 +18,9 @@ app.get('/tasks',function(req, res){
     const getTasks=tasks.map(task=>`<li>${task}</li>`)
     res.send("<ul>Tasks</ul>"+getTasks.join(""))
 })
+
+app.get('/tasks/:id',function(req, res){
+    const requestedId = req.url.split('/')[2]
+    console.log('a certain task with id: '+requestedId+' was requested');
+    res.send(tasks[requestedId])
+})
