@@ -20,5 +20,5 @@ app.get('/tasks',function(req, res){
 app.get('/tasks/:id',function(req, res){
     const requestedId = req.url.split('/')[2]
     console.log('a certain task with id: '+requestedId+' was requested');
-    res.send(tasks[requestedId])
+    res.send(tasks.filter(task=>task.id==id))
 }) 

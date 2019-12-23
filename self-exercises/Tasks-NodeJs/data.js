@@ -6,9 +6,9 @@ const tasks=
         done: false
     },
     {
-    id:2,
-    task:"study js objects",
-    done: false
+        id:2,
+        task:"study js objects",
+        done: false
     },
     {
         id:3,
