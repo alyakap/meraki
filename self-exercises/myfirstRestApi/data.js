@@ -7,3 +7,6 @@ const people=[
     {id:6, name:"Zeynep", lastname:"Ilhan"}
 ]
 module.exports=people;
+
+//even if we create array like above postman turns this into json so if I need to post new object in this array it needs to be like this:
+//{"id":6, "name":"Zeynep", "lastname":"Ilhan"}
