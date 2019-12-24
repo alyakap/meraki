@@ -24,6 +24,8 @@ app.get('/people/:id',function(req, res){
     res.send(people.filter(person=>person.id==requestedId))
 })
 
+
+//the person to be posted needed to be JSON
 app.post('/people',function(req, res){
     console.log(req.body);
     people.push(req.body);
