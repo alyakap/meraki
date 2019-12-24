@@ -32,3 +32,10 @@ app.post('/people',function(req, res){
     res.send(people);
 
 })
+
+app.put('/people/:id',function(req, res){
+    const tobeUpdatedId=req.url.split('/')[2];
+    people[tobeUpdatedId-1]=req.body;
+    res.send(people);
+
+})
