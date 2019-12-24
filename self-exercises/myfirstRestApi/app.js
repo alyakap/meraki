@@ -1,6 +1,10 @@
 const people=require('./data');
 const express = require("express");
 const app = express();
+const bodyParser=require('body-parser')
+
+app.use(bodyParser.urlencoded({'extended':'true'}));          
+//app.use(bodyParser.json());  
 
 
 app.listen(3222, () => {
@@ -18,3 +22,12 @@ app.get('/people/:id',function(req, res){
     console.log(`a certain person with id: ${requestedId} was requested`);
     res.send(people.filter(person=>person.id==requestedId))
 })
+
+app.post('/people',function(req, res){
+      const newPerson=req.body;
+      console.log('The person user wanted to add:', newPerson);
+            // people.push(newPerson);
+            // res.send(people)
+      
+
+    })
