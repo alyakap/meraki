@@ -1,4 +1,4 @@
-const persons=[
+const people=[
     {id:1, name:"Hanim", lastname:"Kapusuz"},
     {id:2, name:"David", lastname:"Verhulst"},
     {id:3, name:"Askim", lastname:"Kintziger"},
@@ -6,4 +6,4 @@ const persons=[
     {id:5, name:"Murat", lastname:"Kapusuz"},
     {id:6, name:"Zeynep", lastname:"Ilhan"}
 ]
-module.exports=persons;
+module.exports=people;
