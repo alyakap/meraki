@@ -4,8 +4,8 @@ const port=3222
 const app = express();
 
 const bodyParser = require('body-parser') //in order to post an new object you need to get it as json so we use body-parser
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json()) //started to use body-parser
+app.use(bodyParser.urlencoded({ extended: true })) //??
 
 
 app.listen(port, () => {
