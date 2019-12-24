@@ -39,8 +39,9 @@ app.put('/people/:id',function(req, res){
     res.send(people);
 
 })
+
 app.delete('/people/:id',function(req, res){
     const tobeDeletedId=req.url.split('/')[2];
-    res.send(people.filter(person=>person.id!=tobeDeletedId));
+    res.send(people.filter(person=>person.id!=tobeDeletedId)); //not use !==
 
 })
