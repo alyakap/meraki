@@ -24,8 +24,8 @@ app.get('/people/:id',function(req, res){
 })
 
 app.post('/people',function(req, res){
-      console.log(req.body);
-      people.push(req.body);
-      res.send(people);
+    console.log(req.body);
+    people.push(req.body);
+    res.send(people);
 
-    })
+})
