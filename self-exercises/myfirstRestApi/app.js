@@ -1,5 +1,6 @@
 const people=require('./data');
 const express = require("express");
+const port=3222
 const app = express();
 
 const bodyParser = require('body-parser')
@@ -7,7 +8,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 
-app.listen(3222, () => {
+app.listen(port, () => {
     console.log("Server running on port 3000");
     console.log(people);
    });
