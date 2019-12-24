@@ -1,10 +1,10 @@
 const people=require('./data');
 const express = require("express");
 const app = express();
-// const bodyParser=require('body-parser')
 
-// app.use(bodyParser.urlencoded({'extended':'true'}));          
-//app.use(bodyParser.json());  
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 app.listen(3222, () => {
@@ -24,10 +24,8 @@ app.get('/people/:id',function(req, res){
 })
 
 app.post('/people',function(req, res){
-      const newPerson=req.body;
-      console.log('The person user wanted to add:', newPerson);
-            // people.push(newPerson);
-            // res.send(people)
-      
+      console.log(req.body);
+      people.push(req.body);
+      res.send(people);
 
     })
