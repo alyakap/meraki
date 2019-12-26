@@ -30,7 +30,6 @@ app.post('/people',function(req, res){
     console.log(req.body);
     people.push(req.body);
     res.send(people);
-
 })
 
 app.put('/people/:id',function(req, res){
@@ -43,5 +42,4 @@ app.put('/people/:id',function(req, res){
 app.delete('/people/:id',function(req, res){
     const tobeDeletedId=req.url.split('/')[2];
     res.send(people.filter(person=>person.id!=tobeDeletedId)); //not use !==
-
 })
