@@ -1,10 +1,11 @@
 const people=require('./data');
 const express = require("express");
+const port=3222
 const app = express();
-// const bodyParser=require('body-parser')
 
-// app.use(bodyParser.urlencoded({'extended':'true'}));          
-//app.use(bodyParser.json());  
+const bodyParser = require('body-parser') //in order to post an new object you need to get it as json so we use body-parser
+app.use(bodyParser.json()) //started to use body-parser
+app.use(bodyParser.urlencoded({ extended: true })) //??
 
 
 app.listen(3222, () => {
@@ -23,6 +24,8 @@ app.get('/people/:id',function(req, res){
     res.send(people.filter(person=>person.id==requestedId))
 })
 
+
+//the person to be posted needed to be JSON
 app.post('/people',function(req, res){
       const newPerson=req.body;
       console.log('The person user wanted to add:', newPerson);
