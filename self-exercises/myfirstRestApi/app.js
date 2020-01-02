@@ -8,7 +8,7 @@ const app = express();
 
 
 app.listen(3222, () => {
-    console.log("Server running on port 3000");
+    console.log("Server running on port 3222");
     console.log(people);
    });
 
@@ -26,8 +26,6 @@ app.get('/people/:id',function(req, res){
 app.post('/people',function(req, res){
       const newPerson=req.body;
       console.log('The person user wanted to add:', newPerson);
-            // people.push(newPerson);
-            // res.send(people)
-      
-
+      people.push(newPerson);
+      res.send(people)
     })
