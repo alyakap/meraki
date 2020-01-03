@@ -7,6 +7,4 @@ const styleObj = {
 }
 
 
-
-
 Object.assign(link.style,styleObj)
