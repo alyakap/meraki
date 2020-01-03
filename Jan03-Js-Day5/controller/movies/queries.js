@@ -12,11 +12,13 @@ const getMovie = id => {
 }
 
 const getFilteredMovies = ids => {
+    // !!! DO NOT MUTATE THE ORIGINAL ARRAY
+    const filteredMovies = [...movies]
     const idsArr = ids.split(',');
-    Array.from(Array(movies.length).keys()).reverse().forEach(index =>
-        !idsArr.some(id => id === movies[index].id) && movies.splice(index, 1)
+    Array.from(Array(filteredMovies.length).keys()).reverse().forEach(index =>
+        !idsArr.some(id => id === filteredMovies[index].id) && filteredMovies.splice(index, 1)
     );
-    return movies
+    return filteredMovies
 }
 
 // or
