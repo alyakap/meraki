@@ -1,6 +1,7 @@
-const taskRouter = require('express').Router()
-const tasks = require('../../models/tasks')
+const tasksRouter = require('express').Router()
 
-taskRouter.get('/', (req, res) => res.send(tasks))
+const { handleGetTasksList } = require('./handlers')
 
-module.exports = taskRouter
+tasksRouter.get('/', handleGetTasksList)
+
+module.exports = tasksRouter

@@ -1,8 +1,7 @@
 const userRouter = require('express').Router()
-const users = require('../../models/users')
 
-userRouter.get('/', function (req, res) {
-    res.send(users)
-})
+const { handleGetUsersList } = require('./handlers')
+
+userRouter.get('/', handleGetUsersList)
 
 module.exports = userRouter

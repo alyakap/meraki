@@ -9,6 +9,3 @@ const mainRouter = function (app) {
 }
 
 module.exports = mainRouter;
-
-
-

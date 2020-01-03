@@ -10,6 +10,4 @@ const users = [
         email: 'kanim@hanimk.com'
     }
 ]
-module.exports = {
-    users
-}
+module.exports = users
