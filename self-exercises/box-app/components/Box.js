@@ -5,7 +5,9 @@ class Box {
         this.generateHTML();
     }
     generateHTML(){
-        this.holder.insertAdjacentHTML('beforeEnd', `<div>${this.size}</div>`);
+        this.holder.insertAdjacentHTML('beforeEnd', `<div >${this.size}</div>`);
+        this.boxRef = this.holder.querySelector('div')
+        
     }
 
 }
