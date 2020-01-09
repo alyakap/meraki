@@ -9,6 +9,7 @@ class Box {
         this.generateHTML();
         this.setupStyling();
         this.setPosition();
+        this.setRandomBackgroundColor();
     }
     generateHTML(){
         this.holder.insertAdjacentHTML('beforeEnd', `<div class="box"> BOX </div>`);
@@ -27,7 +28,8 @@ class Box {
     }
 
     setRandomBackgroundColor(){
-        this.boxRef.addEventListener('click', () => {
+        this.boxRef.style.backgroundColor=randomcolor();
+        this.boxRef.addEventListener('click', function(){
             console.log("clicked")
             this.style.backgroundColor=randomcolor();
         })
