@@ -6,7 +6,7 @@ class Box {
         this.setupStyling();
     }
     generateHTML(){
-        this.holder.insertAdjacentHTML('beforeEnd', `<div style="background-color: coral; width:">box</div>`);
+        this.holder.insertAdjacentHTML('beforeEnd', `<div class="box" style="background-color: coral;">box</div>`);
         this.boxRef = this.holder.querySelector('div')
         
         
