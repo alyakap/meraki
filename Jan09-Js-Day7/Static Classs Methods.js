@@ -23,6 +23,8 @@ runner1.exercise(10)
 runner2.exercise(30)
 
 
-Runner.calcAvg([runner2, runner1])
+Runner.calcAvg([runner2, runner1]) // this works
+
+runner1.calcAvg([runner2, runner1]) //this doesnt work
 
 
