@@ -1,12 +1,14 @@
+import randomcolor from 'randomcolor';
+
 class Box {
-    constructor(holder,size){
+    constructor(holder,size, topPos, leftPos){
         this.holder=holder;
         this.size=size;
+        this.topPos=topPos;
+        this.leftPos=leftPos;
         this.generateHTML();
         this.setupStyling();
         this.setPosition();
-        this.setBackgroundColor();
-
     }
     generateHTML(){
         this.holder.insertAdjacentHTML('beforeEnd', `<div class="box"> BOX </div>`);
@@ -20,16 +22,20 @@ class Box {
     }
 
     setPosition(){
-        this.boxRef.style.left= 0;
-        this.boxRef.style.top = 0;
+        this.boxRef.style.left= this.leftPos+'px';
+        this.boxRef.style.top = this.topPos+'px';
     }
 
-    setBackgroundColor(){
-        this.boxRef.style.backgroundColor="coral";
+    setRandomBackgroundColor(){
+        this.boxRef.addEventListener('click', () => {
+            console.log("clicked")
+            this.style.backgroundColor=randomcolor();
+        })
+        
     }
 
 }
- export default (holder,size) => new Box (holder,size)
+ export default (holder,size,topPos,leftPos) => new Box (holder,size,topPos,leftPos)
 
 
 
