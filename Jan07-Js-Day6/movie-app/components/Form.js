@@ -1,10 +1,12 @@
 import axios from 'axios'
+import Pagination from './Pagination';
 
 class Form {
-    constructor(holder, movies) {
+    constructor(holder, moviesObj, list) {
+        this.list = list;
         this.holder = holder;
         this.formElement = this.generateHtml();
-        this.movies = movies;
+        this.moviesObj = moviesObj;
         this.setUpEvents();
     }
     generateHtml() {
@@ -22,6 +24,7 @@ class Form {
         this.formElement.addEventListener('submit', (e) => {
             e.preventDefault() //do not execute the default behaviour of sending data to the action of the form
             const searchStr = this.formElement.querySelector('.searchField').value;
+            this.moviesObj.searchStr = searchStr
             this.getMovies(searchStr)
         })
     }
@@ -29,14 +32,19 @@ class Form {
         //http://www.omdbapi.com/?s=wars&apikey=2e3b4604
         axios.get(`http://www.omdbapi.com?s=${str}&apikey=2e3b4604`)
             .then(res => {
-                this.movies.length = 0;
-                res.data.Search.forEach(movie => this.movies.push(movie))
+                this.moviesObj.movies.length = 0;
+                this.moviesObj.total = parseInt(res.data.totalResults)
+                res.data.Search.forEach(movie => this.moviesObj.movies.push(movie))
+                this.list.render(true)
             })
-
     }
 }
 
-const form = function (holder, movies) {
-    return new Form(holder, movies)
+const form = function (holder, moviesObj, list) {
+    return new Form(holder, moviesObj, list)
 }
 export default form;
+
+
+// or smaller version
+// export default (holder, movies) => new Form(holder, movies)

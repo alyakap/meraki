@@ -7,11 +7,9 @@ class Header {
     generateHtml() {
         this.holder.insertAdjacentHTML("beforeEnd", `<h1>${this.headerTitle}</h1>`);
     }
-    // setHeaderTitle(str) {
-    //     this.headerTitle = str;
-    //     this.generateHtml()
-    // }
 }
+
+
 
 const header = function (holder, headerTitle) {
     return new Header(holder, headerTitle)

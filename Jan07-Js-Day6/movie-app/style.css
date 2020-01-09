@@ -1,5 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 h1 {
   color: purple;
 }
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
 ul li {
+  width: 200px;
+  height: 350px;
+  list-style-type: none;
+  margin: 20px;
+}
+ul li img {
+  width: 200px;
+  height: 350px;
+  object-fit: contain;
 }
