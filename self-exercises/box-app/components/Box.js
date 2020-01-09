@@ -4,9 +4,12 @@ class Box {
         this.size=size;
         this.generateHTML();
         this.setupStyling();
+        this.setPosition();
+        this.setBackgroundColor();
+
     }
     generateHTML(){
-        this.holder.insertAdjacentHTML('beforeEnd', `<div class="box" style="background-color: coral;"> BOX </div>`);
+        this.holder.insertAdjacentHTML('beforeEnd', `<div class="box"> BOX </div>`);
         this.boxRef = this.holder.querySelector('div')
         
         
@@ -19,6 +22,10 @@ class Box {
     setPosition(){
         this.boxRef.style.left= 0;
         this.boxRef.style.top = 0;
+    }
+
+    setBackgroundColor(){
+        this.boxRef.style.backgroundColor="coral";
     }
 
 }
