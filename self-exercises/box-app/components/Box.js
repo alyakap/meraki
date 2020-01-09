@@ -12,8 +12,9 @@ class Box {
         this.setRandomBackgroundColor();
     }
     generateHTML(){
+
         this.holder.insertAdjacentHTML('beforeEnd', `<div class="box"> BOX </div>`);
-        this.boxRef = this.holder.querySelector('div')
+        this.boxRef = this.holder.lastChild;
         
         
     }

@@ -4,6 +4,8 @@ import box from './components/Box';
 
 const app = document.getElementById('app');
 
-const box1=box(app, 300, 60, 59);
+box(app, 300, 60, 59);
 
-const box2=box(app, 40, 400, 300);
+box(app, 100, 400, 800);
+box(app, 145, 500, 200);
+box(app, 134, 400, 500);
