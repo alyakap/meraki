@@ -5,8 +5,8 @@ class Box {
         this.generateHTML();
     }
     generateHTML(){
-        this.holder.insertAdjacentHTML('beforeEnd', `<div id="box" width="${this.size}" height="${this.size}" style="background-color: coral;"></div>`);
-        this.boxRef = this.holder.getElementById('box')
+        this.holder.insertAdjacentHTML('beforeEnd', `<div width="${this.size}" height="${this.size}" style="background-color: coral;"></div>`);
+        this.boxRef = this.holder.querySelector('div')
         
     }
 
