@@ -3,11 +3,17 @@ class Box {
         this.holder=holder;
         this.size=size;
         this.generateHTML();
+        this.setupStyling();
     }
     generateHTML(){
-        this.holder.insertAdjacentHTML('beforeEnd', `<div width="${this.size}" height="${this.size}" style="background-color: coral;"></div>`);
+        this.holder.insertAdjacentHTML('beforeEnd', `<div style="background-color: coral; width:">box</div>`);
         this.boxRef = this.holder.querySelector('div')
         
+        
+    }
+    setupStyling(){
+        this.boxRef.style.width = this.size+ 'px';
+        this.boxRef.style.height = this.size+ 'px';
     }
 
 }
