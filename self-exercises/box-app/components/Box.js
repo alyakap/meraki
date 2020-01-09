@@ -16,6 +16,11 @@ class Box {
         this.boxRef.style.height = this.size+ 'px';
     }
 
+    setPosition(){
+        this.boxRef.style.left= 0;
+        this.boxRef.style.top = 0;
+    }
+
 }
  export default (holder,size) => new Box (holder,size)
 
