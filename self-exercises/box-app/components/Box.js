@@ -2,7 +2,7 @@ class Box {
     constructor(holder,size){
         this.holder=holder;
         this.size=size;
-        this.generateHtml();
+        this.generateHTML();
     }
     generateHTML(){
         this.holder.insertAdjacentHTML('beforeEnd', `<div>${this.size}</div>`);
