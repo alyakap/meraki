@@ -6,17 +6,14 @@ class Box {
         this.size=size;
         this.topPos=topPos;
         this.leftPos=leftPos;
-        this.generateHTML();
+        this.boxRef = this.generateHTML();
         this.setupStyling();
         this.setPosition();
         this.setRandomBackgroundColor();
     }
     generateHTML(){
-
-        this.holder.insertAdjacentHTML('beforeEnd', `<div class="box"> BOX </div>`);
-        this.boxRef = this.holder.lastChild;
-        
-        
+        this.holder.insertAdjacentHTML('beforeEnd', `<div class="box">BOX</div>`);
+        return this.holder.lastChild;
     }
     setupStyling(){
         this.boxRef.style.width = this.size+ 'px';
