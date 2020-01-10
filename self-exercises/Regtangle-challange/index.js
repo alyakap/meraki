@@ -1,14 +1,19 @@
 import drawingZone from './components/DrawingZone';
-
+import rectangle from './components/Rectangle';
 
 const app = document.getElementById('app');
 
 const zone1=drawingZone(app);
 
 
-zone1.changeSize(500, 100);
+zone1.changeSize(150, 150);
 
-const reg1=zone1.renderReg(100,200,200,200)
+//console.log(zone1);
 
-console.log(reg1.calSurface());
+const rec1=rectangle(zone1)
+
+console.log(rec1.isValid());
+
+
+
 
