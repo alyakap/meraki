@@ -1,4 +1,7 @@
 import randomcolor from 'randomcolor';
+import Regtangle from './Regtangle';
+
+
 class DrawingZone {
     constructor(holder, width="300", height="200", top="100", left="100"){
         this.holder=holder;
@@ -12,7 +15,7 @@ class DrawingZone {
     }
 
     generateHtml(){
-        this.holder.insertAdjacentHTML('beforeEnd', `<div class="zone" style="position:relative"> Drawing zone </div>`);
+        this.holder.insertAdjacentHTML('beforeEnd', `<div class="zone" style="position:absolute">Drawing zone</div>`);
         console.log("generate")
         return this.holder.lastChild;
     }
@@ -29,6 +32,9 @@ class DrawingZone {
     changeSize(givenWidth, givenHeight){
         this.zoneRef.style.width = givenWidth+ 'px';
         this.zoneRef.style.height = givenHeight+ 'px';
+    }
+    renderReg(wid, hei, top, left){
+        return new Regtangle(this.zoneRef, wid, hei, top, left)
     }
 
 }
