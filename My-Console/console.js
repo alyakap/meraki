@@ -1,27 +1,20 @@
-function sumStrings(a,b) { 
-  let counter=0;
-  let arr=[];
-  let sum=0;
-  let x=a.length;
-  let y=b.length;
-  (x>y) ? counter=x : counter=y
-  for(let i=1 ; i<=counter ; i++){
-    sum+=((a[x-i]!==undefined)? parseInt(a[x-i]) : 0) + ((b[y-i]!==undefined)? parseInt(b[y-i]) : 0)
-    
-      if(sum>9) {
-          arr.unshift(sum.toString()[1])
-          sum=sum.toString()[0]
-          console.log(parseInt(a[i-1]))
-          // parseInt(a[x-i+1])+=sum.toString()[0]
-          // console.log(sum)
-      }
-       
-      arr.unshift(sum.toString[0])
-      sum=0
-    
-    
-  }
-  return arr
-}
+// var inputArray = [1, 2, 3];
 
-console.log(sumStrings('1234','456'))
+
+// let w=n.toString().split("").map(Number)
+// var result = inputArray.reduce(function permute(res, item, key, arr) {
+//     return res.concat(arr.length > 1 && arr.slice(0, key).concat(arr.slice(key + 1)).reduce(permute, []).map(function(perm) { return [item].concat(perm); }) || item);}, []);
+
+// console.log(result)
+
+function nextBigger(n){
+  let w=n.toString().split("").map(Number)
+  let v1=w.reduce(function permute(res, item, key, arr) {
+    return res.concat(arr.length > 1 && arr.slice(0, key).concat(arr.slice(key + 1)).reduce(permute, []).map(function(perm) { return [item].concat(perm); }) || item);}, []);
+  let v2=v1.map(x=>parseInt(x.join(""))).sort((a,b)=>b-a)
+    let ind=v2.indexOf(n)-1
+    
+    return v2[ind];
+ 
+}
+console.log(nextBigger(531))

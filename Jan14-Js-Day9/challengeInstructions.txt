@@ -1,0 +1,25 @@
+Exercise on Working with objects in Javascript 
+The main focus is to create a system where we can add Sporters and every sporter has the ability to manage his training-logs. When lots of Sporter are generated with lots of traininglogs we can apply some datascience on the data.
+A: SETUP PART
+1)     Sporter
+Generate a Class Sporter. Every sporter has 4 properties:
+·        Firstname
+·        LastName
+·        Age
+·        TrainingLog
+2)     Log
+ Generate a Class Log. Every Log has 3 properties:
+·        Sportstype
+·        Distance
+·        Time (minutes)
+When the 2 classes are created. Create an array of sporters and generate 5000 sporters with a random firstName, lastName, age between (16 and 60) and a TrainingLog with a minimum of 500 and a maximum of 1000 logs. Every log should have a rondom Sport (“swimming”,”running” or “cycling”). According to these sportsTypes generate me some random distance and time(in minutes). Try to be realistic in your randomRange according to the sportsType.
+B: DATASCIENCE PART
+Add some methods so we can get some statistics
+Add the ability to calculate a sporter his total swimming minutes
+Add the ability to calculate a sporter his total running kms
+sum of all sports kms => Calculate the total distance of all traininglogs of all people
+sum of all running km of all sporters => Calculate the total running distance of all traininglogs of all people
+average running speed of all sporters => Calculate avg-speed of all running of all people in all logs
+person with the longest total swimming distance => search for the first-name, last-name and age of the person that did the longest total swimdistance
+person with the longest swim distance log => find the person with the biggest single distance swimtraining
+fastest average cycler => Find the guy that is the fastest cycler returning its name and its avg km/h
