@@ -31,7 +31,8 @@ class Sporter{
         this.trainingLog=[];
     }
     getSwimmingTime(){
-        return this.filterSport("swimming").reduce((a,c)=>a+c.time,0) 
+        console.log(this)
+        return this ? this.filterSport("swimming").reduce((a,c)=>a+c.time,0) : 'user not existing'
     }
     getRunningDistance(){
         return this.filterSport('running').reduce((a,c)=>a+c.distance,0) 
@@ -39,6 +40,7 @@ class Sporter{
     filterSport(str){
         return this.trainingLog.filter(x=>x.sportsType===str)
     }
+
 }
 class Log{
     constructor(sportsType, distance, time){
@@ -60,15 +62,28 @@ while(nrOfSporters--){
     i++;
 }
 
-
+function validateUser(sporter, funtionName){
+    if (sporter){
+        switch(funtionName){
+            case "SwimmingTime":
+                console.log(sporter.filterSport("swimming").reduce((a,c)=>a+c.time,0))
+                break;
+            case "RunningDistance":
+                console.log(sporter.filterSport('running').reduce((a,c)=>a+c.distance,0))
+                break;
+        } 
+    }else{
+        console.log("user not existing")
+    }
+}
+validateUser(randomSporters[33], "SwimmingTime")
 
 
  
-console.log(JSON.stringify(randomSporters))
+//console.log(JSON.stringify(randomSporters))
+  
 
-console.log(  randomSporters[33].getSwimmingTime() )
-console.log(  randomSporters[33].getRunningDistance())
-console.log(  randomSporters[33].trainingLog.reduce((a,c)=>a+c.time,0))
+
 
 function sumOfAllDistance(){
     let sum=0;
@@ -78,4 +93,58 @@ function sumOfAllDistance(){
     }
     return sum
 }
+console.log(sumOfRAllDistance())
+
+function sumOfRunningKmAllSporters(){
+    let sum=0;
+    for(let i=0; i<randomSporters.length; i++)
+    {
+        sum+=randomSporters[i].trainingLog.filterSport('running').reduce((a,c)=>a+c.distance,0)
+    }
+    return sum
+}
 console.log(sumOfAllDistance())
+
+
+function avgOfRunningSpeedOfAll(){
+    let distanceSum=0;
+    let timeSum=0;
+    for(let i=0; i<randomSporters.length; i++)
+    {
+        distanceSum+=randomSporters[i].trainingLog.filterSport('running').reduce((a,c)=>a+c.distance,0)
+        timeSum+=randomSporters[i].trainingLog.filterSport('running').reduce((a,c)=>a+c.time,0)
+    }
+    return distanceSum/(timeSum/60);
+}
+
+function personWithLongestSwimmingTotalDistance(){
+    let sumOfSwimmingDistance=[];
+    for(let i=0; i<randomSporters.length; i++)
+    {
+        sumOfSwimmingDistance.push(randomSporters[i].trainingLog.filterSport('swimming').reduce((a,c)=>a+c.distance,0))
+    }
+    return randomSporters[sumOfSwimmingDistance.indexOf(Math.max(...sumOfSwimmingDistance))]
+}
+
+function sporterWithlongestSwimmingDistance(){
+    let biggestSwimmingDistance=[];
+    for(let i=0; i<randomSporters.length; i++)
+    {
+        biggestSwimmingDistance.push(randomSporters[i].trainingLog.filterSport('swimming').sort((a,b)=> b.distance-a.distance)[0]);
+    }
+    return randomSporters[biggestSwimmingDistance.indexOf(Math.max(...biggestSwimmingDistance))]
+}
+
+function fastestCyclist(){
+    let cyclingSpeeds=[];
+    let cyclingDistance=0
+    let cyclingTime=0
+    for(let i=0; i<randomSporters.length; i++)
+    {
+        cyclingDistance=randomSporters[i].trainingLog.filterSport('cycling').reduce((a,c)=>a+c.distance,0)
+        cyclingTime=randomSporters[i].trainingLog.filterSport('cycling').reduce((a,c)=>a+c.time,0)
+        cyclingSpeeds.push(cyclingDistance/cyclingTime);
+    }
+    return console.log(randomSporters[cyclingSpeeds.indexOf(Math.max(...cyclingSpeeds))].firstName, Math.max(...cyclingSpeeds))
+}
+
