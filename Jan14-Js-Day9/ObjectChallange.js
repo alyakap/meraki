@@ -62,15 +62,13 @@ while(nrOfSporters--){
     i++;
 }
 
-function validateUser(sporter, funtionName){
+function getResults(sporter, funtionName){
     if (sporter){
         switch(funtionName){
             case "SwimmingTime":
-                console.log(sporter.filterSport("swimming").reduce((a,c)=>a+c.time,0))
-                break;
+                return sporter.filterSport("swimming").reduce((a,c)=>a+c.time,0)
             case "RunningDistance":
-                console.log(sporter.filterSport('running').reduce((a,c)=>a+c.distance,0))
-                break;
+                return sporter.filterSport('running').reduce((a,c)=>a+c.distance,0)
         } 
     }else{
         console.log("user not existing")
