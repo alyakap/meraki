@@ -1,0 +1,10 @@
+Circle class =>
+	- x
+	- y
+	- size = 100px
+every circle is a div with a css class .circle
+if you click on the body => a circle is added on the body in black on the middle of the page with a width of 100px.
+If you click the circle it animates to a random location (in the boundries of the screen), random color and random size between (50,200)
+if you ctrl-click a circle it should ask you for confirmation to be removed. If you say yes it will get removed
+use vanilla-dialogs for this
+if you type on your keyboard the letter R G or B the body its background color changed to pastel variants
