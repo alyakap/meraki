@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header {
+  height: 40px;
+  background-color: #ccc;
+}
+.main {
+  min-height: 100px;
+  background-color: #999;
+}
+.footer {
+  height: 30px;
+  background-color: #aaa;
+}
+.main ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main ul li {
+  width: 200px;
+  height: 400px;
+  overflow: hidden;
+}
+.main ul li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
