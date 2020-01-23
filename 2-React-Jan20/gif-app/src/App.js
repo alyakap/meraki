@@ -10,6 +10,7 @@ export default class App extends React.Component{
     this.state = {
         SearchStr: "",
         gifs : {
+            disabled:false,
             loading: false,
             error: false,
             data: []
@@ -24,12 +25,12 @@ export default class App extends React.Component{
       })
     }
     getGif(){
-      
       this.setState({
           ...this.state,
           gifs : {
               ...this.state.gifs,
-              loading: true
+              loading: true,
+              disabled: true
           }
       })
 
@@ -42,7 +43,8 @@ export default class App extends React.Component{
                   gifs : {
                       error:false,
                       loading: false,
-                      data:[...response.data.results]
+                      data:[...response.data.results],
+                      disabled:false
                   }
               })
           }else{
@@ -72,8 +74,8 @@ export default class App extends React.Component{
 
     render(){
       return ( 
-        <div className="App">
-              <Form gifSearchStr={this.state.SearchStr} getGif={this.getGif.bind(this)} updateSeacrhStrValue={this.updateSeacrhStrValue.bind(this)} />
+        <div className="container">
+              <Form disabled={this.state.gifs.disabled} gifSearchStr={this.state.SearchStr} getGif={this.getGif.bind(this)} updateSeacrhStrValue={this.updateSeacrhStrValue.bind(this)} />
               <GifGrid gifs={this.state.gifs} />
         </div>
       );
