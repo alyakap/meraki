@@ -32,11 +32,11 @@ export default class App extends React.Component{
               loading: true
           }
       })
+
+
       axios.get(`https://api.tenor.com/v1/search?tag=${this.state.SearchStr}&key=LIVDSRZULELA`)
-      
       .then(response=>{
           if(response.data.results){
-            console.log(response.data.results)
               this.setState({
                   ...this.state,
                   gifs : {
