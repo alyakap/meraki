@@ -1,26 +1,80 @@
 import React from 'react';
-import logo from './logo.svg';
+import Form from './components/Form'
+import GifGrid from './components/GifGrid'
+import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+        SearchStr: "",
+        gifs : {
+            loading: false,
+            error: false,
+            data: []
+        }
+      }
+    }
 
-export default App;
+    updateSeacrhStrValue(str){
+      this.setState({
+          ...this.state,
+          SearchStr : str
+      })
+    }
+    getGif(){
+      this.setState({
+          ...this.state,
+          gifs : {
+              ...this.state.gifs,
+              loading: true
+          }
+      })
+      axios.get(`https://api.tenor.com/v1/search?tag=${this.state.SearchStr}&key=LIVDSRZULELA`)
+      
+      .then(response=>{
+          if(response.data.Search){
+              this.setState({
+                  ...this.state,
+                  gifs : {
+                      error:false,
+                      loading: false,
+                      data:[...response.data.results]
+                  }
+              })
+          }else{
+              this.setState({
+                  ...this.state,
+                  gifs: {
+                      error:false,
+                      loading: false,
+                      data:[]
+                  }
+              })
+          }
+      })
+      .catch(error=>{
+          this.setState({
+              ...this.state,
+              gifs : {
+                  ...this.state.gifs,
+                  error:true,
+                  loading: false,
+              }
+          })
+          throw error;
+      })
+    }
+
+
+    render(){
+      return ( 
+        <div className="App">
+              <Form gifSearchStr={this.state.SearchStr} getGif={this.getGif.bind(this)} updateSeacrhStrValue={this.updateSeacrhStrValue.bind(this)} />
+              <GifGrid gifs={this.state.gifs} />
+        </div>
+      );
+    }
+}
+  

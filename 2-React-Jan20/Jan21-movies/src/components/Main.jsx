@@ -62,10 +62,6 @@ export default class Main extends React.Component{
             })
             throw error;
         })
-        // take the formValue from the state
-        // loading = true
-        // do an axios call with that value
-        // when finished => loading=false and we set the data to the loaded movies
     }
     render(){
         return  <main className="main">
