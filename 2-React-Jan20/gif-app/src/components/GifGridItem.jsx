@@ -1,3 +1,3 @@
 import React from 'react'
-const Gif = ({ GifObj }) => <img src={GifObj.media[0].tinygif.url} alt="" />
+const Gif = ({ GifObj }) => <li><img src={GifObj.media[0].tinygif.url} alt="" /></li>
 export default Gif;
