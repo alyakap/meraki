@@ -8,13 +8,15 @@ export default class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
+        pageLoad:true,
         SearchStr: "",
         gifs : {
             disabled:false,
             loading: false,
             error: false,
             data: []
-        }
+        },
+        chosenGif : ''
       }
     }
 
@@ -40,6 +42,7 @@ export default class App extends React.Component{
           if(response.data.results){
               this.setState({
                   ...this.state,
+                  pageLoad:false,
                   gifs : {
                       error:false,
                       loading: false,
@@ -76,7 +79,9 @@ export default class App extends React.Component{
       return ( 
         <div className="container">
               <Form disabled={this.state.gifs.disabled} gifSearchStr={this.state.SearchStr} getGif={this.getGif.bind(this)} updateSeacrhStrValue={this.updateSeacrhStrValue.bind(this)} />
-              <GifGrid gifs={this.state.gifs} />
+              <GifGrid gifs={this.state.gifs} pageLoad={this.state.pageLoad}  />
+              
+            
         </div>
       );
     }
