@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Form = ({getGif, GifSearchStr, updateSeacrhStrValue}) => {
+const Form = ({getGif, gifSearchStr, updateSeacrhStrValue}) => {
     return <form onSubmit={(e)=>{
                 e.preventDefault()
-                getGif()    }}>
-        <input type="text" value={GifSearchStr} onChange={(e)=>{updateSeacrhStrValue(e.target.value)}} />
+                getGif()    
+                }}>
+        <input type="text" value={gifSearchStr} onChange={(e)=>{updateSeacrhStrValue(e.target.value)}} />
         <button type="submit">Search</button>
         </form>
 }
