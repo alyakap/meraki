@@ -1,4 +1,5 @@
 import React from 'react';
+import ChosenGif from './components/ChosenGif'
 import Form from './components/Form'
 import GifGrid from './components/GifGrid'
 import axios from 'axios';
@@ -25,6 +26,13 @@ export default class App extends React.Component{
           ...this.state,
           SearchStr : str
       })
+    }
+    setChosenGif(id){
+        this.setState({
+            ...this.state,
+            chosenGif: id
+        })
+
     }
     getGif(){
       this.setState({
@@ -78,12 +86,23 @@ export default class App extends React.Component{
     render(){
       return ( 
         <div className="container">
-              <Form disabled={this.state.gifs.disabled} gifSearchStr={this.state.SearchStr} getGif={this.getGif.bind(this)} updateSeacrhStrValue={this.updateSeacrhStrValue.bind(this)} />
-              <GifGrid gifs={this.state.gifs} pageLoad={this.state.pageLoad}  />
-              
-            
+              {this.state.chosenGif ? (
+                    <ChosenGif id={this.state.chosenGif}/>
+                ) : (
+                    <>
+                    <Form disabled={this.state.gifs.disabled} gifSearchStr={this.state.SearchStr} getGif={this.getGif.bind(this)} updateSeacrhStrValue={this.updateSeacrhStrValue.bind(this)} />
+                    <GifGrid gifs={this.state.gifs} pageLoad={this.state.pageLoad} setChosenGif={this.setChosenGif.bind(this)} />
+                    </>
+                )}
         </div>
       );
     }
 }
   
+// conmpo=nentDidMount
+
+// ({id}) => {
+
+//     return `div`
+
+// }
