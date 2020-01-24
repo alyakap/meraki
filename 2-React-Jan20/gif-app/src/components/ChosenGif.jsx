@@ -3,17 +3,15 @@ import axios from 'axios';
 
 
 export default class ChosenGif extends React.Component{
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            id: "",
             loading: false,
             error: false,
             data:[]
         }
-        
     }
-    componentDidMount(){
+    componentDidMount(){ 
         this.setState({
             ...this.state,
             loading: true
@@ -21,7 +19,6 @@ export default class ChosenGif extends React.Component{
     
         axios.get(`https://api.tenor.com/v1/gifs?ids=${this.props.id}&key=LIVDSRZULELA`)
       .then(response=>{
-        //console.log("hey",response.data.results[0].media[0].mediumgif.url)
           if(response.data.results){
               this.setState({
                   ...this.state,
@@ -29,7 +26,6 @@ export default class ChosenGif extends React.Component{
                 loading: false,
                 data:[...response.data.results]  
               })
-              //console.log("mystate", this.state)
           }else{
               this.setState({
                 ...this.state,
@@ -48,23 +44,30 @@ export default class ChosenGif extends React.Component{
             })
             throw error;
         })
-        
     }
 
+    closeImgPreview(){
+        this.setState({
+            ...this.state,
+            data:[]
+
+        })
+        this.props.clearChosenGif();
+        
+    }
     render(){
         if(this.state.data[0]){
             return (
                 <div>
                     <div className="modal">
                         <div className="modal-content">
-                            <span className="close-btn">&times;</span>
-                            <img src={this.state.data[0].media[0].mediumgif.url} alt="" />
+                            <span className="close-btn" onClick={this.closeImgPreview.bind(this)}>&times;</span>
+                            <img className="chosen-img" src={this.state.data[0].media[0].mediumgif.url} alt="" />
                         </div>
                     </div>
                </div>
             )
         } else return null;
-    
       }
 
 }

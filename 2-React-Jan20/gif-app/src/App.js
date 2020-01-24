@@ -82,12 +82,19 @@ export default class App extends React.Component{
       })
     }
 
+    clearChosenGif(){
+        this.setState({
+            ...this.state,
+            chosenGif: ""
+        })
+    }
+
 
     render(){
       return ( 
         <div className="container">
               {this.state.chosenGif ? (
-                    <ChosenGif id={this.state.chosenGif}/>
+                    <ChosenGif id={this.state.chosenGif} clearChosenGif={this.clearChosenGif.bind(this)}/>
                 ) : (
                     <>
                     <Form disabled={this.state.gifs.disabled} gifSearchStr={this.state.SearchStr} getGif={this.getGif.bind(this)} updateSeacrhStrValue={this.updateSeacrhStrValue.bind(this)} />
