@@ -106,10 +106,3 @@ export default class App extends React.Component{
     }
 }
   
-// conmpo=nentDidMount
-
-// ({id}) => {
-
-//     return `div`
-
-// }
