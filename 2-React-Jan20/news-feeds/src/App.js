@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <Search />
       <Result />
     </Container>

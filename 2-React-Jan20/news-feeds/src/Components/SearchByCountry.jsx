@@ -5,7 +5,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 
-function SearchByCountry() {
+function SearchByCountry({ val, change }) {
   return (
     <Grid item xs={6} style={{ textAlign: "center" }}>
       <FormControl fullWidth>
@@ -13,12 +13,14 @@ function SearchByCountry() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value=""
-          onChange=""
+          value={val}
+          onChange={e => {
+            change(e.target.value);
+          }}
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value="us">United States</MenuItem>
+          <MenuItem value="fr">France</MenuItem>
+          <MenuItem value="au">Australia</MenuItem>
         </Select>
       </FormControl>
     </Grid>

@@ -1,16 +1,19 @@
 import React from "react";
 import { Grid, TextField } from "@material-ui/core";
 
-function SearchBar() {
+function SearchBar({ val, change }) {
   return (
     <Grid item xs={12}>
       <TextField
         id="outlined-full-width"
         label="Search"
-        style={{ margin: 8 }}
         placeholder="Seach by tag"
         fullWidth
         margin="normal"
+        value={val}
+        onChange={e => {
+          change(e.target.value);
+        }}
         InputLabelProps={{
           shrink: true
         }}
