@@ -7,18 +7,25 @@ import FormLabel from "@material-ui/core/FormLabel";
 import FormGroup from "@material-ui/core/FormGroup";
 import Checkbox from "@material-ui/core/Checkbox";
 
-function SearchByDomain() {
+function SearchByDomain({ val, change }) {
   return (
     <Grid item xs={6}>
       <FormControl component="fieldset" className="">
-        <FormLabel component="legend">Sources</FormLabel>
+        <FormLabel component="legend">Domain</FormLabel>
         <FormGroup>
           <FormControlLabel
             control={
               <Checkbox
-                checked={false}
-                //onChange="{handleChange('gilad')}"
-                value="euronews"
+                onChange={e => {
+                  if (e.target.checked) {
+                    val.push(e.target.value);
+                  } else {
+                    let index = val.indexOf(e.target.value);
+                    val.splice(index, 1);
+                  }
+                  change(val);
+                }}
+                value="euronews.com"
               />
             }
             label="EuroNews"
@@ -26,19 +33,33 @@ function SearchByDomain() {
           <FormControlLabel
             control={
               <Checkbox
-                checked={false}
-                //onChange="{handleChange('jason')}"
-                value="bcc"
+                onChange={e => {
+                  if (e.target.checked) {
+                    val.push(e.target.value);
+                  } else {
+                    let index = val.indexOf(e.target.value);
+                    val.splice(index, 1);
+                  }
+                  change(val);
+                }}
+                value="cnn.com"
               />
             }
-            label="BBC"
+            label="CNN"
           />
           <FormControlLabel
             control={
               <Checkbox
-                checked={false}
-                //onChange="{handleChange('antoine')}"
-                value="nytimes"
+                onChange={e => {
+                  if (e.target.checked) {
+                    val.push(e.target.value);
+                  } else {
+                    let index = val.indexOf(e.target.value);
+                    val.splice(index, 1);
+                  }
+                  change(val);
+                }}
+                value="nytimes.com"
               />
             }
             label="NYTimes"
@@ -46,9 +67,16 @@ function SearchByDomain() {
           <FormControlLabel
             control={
               <Checkbox
-                checked={false}
-                //onChange="{handleChange('antoine')}"
-                value="demorgen"
+                onChange={e => {
+                  if (e.target.checked) {
+                    val.push(e.target.value);
+                  } else {
+                    let index = val.indexOf(e.target.value);
+                    val.splice(index, 1);
+                  }
+                  change(val);
+                }}
+                value="demorgen.be"
               />
             }
             label="De Morgen"

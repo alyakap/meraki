@@ -6,29 +6,23 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import Radio from "@material-ui/core/Radio";
 
-function SearchByLanguage() {
+function SearchByLanguage({ val, change }) {
   return (
     <Grid item xs={6}>
       <FormControl component="fieldset" className="">
         <FormLabel component="legend">Language</FormLabel>
         <RadioGroup
-          aria-label="gender"
-          name="gender1"
-          value=""
-          //onChange=""
+          aria-label="language"
+          name="language"
+          value={val}
+          onChange={e => {
+            change(e.target.value);
+          }}
         >
-          <FormControlLabel
-            value="English"
-            control={<Radio />}
-            label="English"
-          />
-          <FormControlLabel value="Dutch" control={<Radio />} label="Dutch" />
-          <FormControlLabel value="French" control={<Radio />} label="French" />
-          <FormControlLabel
-            value="Turkish"
-            control={<Radio />}
-            label="Turkish"
-          />
+          <FormControlLabel value="en" control={<Radio />} label="English" />
+          <FormControlLabel value="nl" control={<Radio />} label="Dutch" />
+          <FormControlLabel value="fr" control={<Radio />} label="French" />
+          <FormControlLabel value="tr" control={<Radio />} label="Turkish" />
         </RadioGroup>
       </FormControl>
     </Grid>

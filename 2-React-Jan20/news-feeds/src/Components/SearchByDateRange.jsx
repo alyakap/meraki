@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 
-function SearchByDateRange() {
+function SearchByDateRange({ val, change1, change2 }) {
   const today = new Date();
   const date =
     today.getFullYear() +
@@ -18,10 +18,13 @@ function SearchByDateRange() {
           label="From"
           fullWidth={true}
           type="date"
-          defaultValue="2000-01-01"
           className=""
           InputLabelProps={{
             shrink: true
+          }}
+          value={date || val.from}
+          onChange={e => {
+            change1(e.target.value);
           }}
         />
       </Grid>
@@ -32,10 +35,13 @@ function SearchByDateRange() {
           label="To"
           fullWidth={true}
           type="date"
-          defaultValue={date}
           className=""
           InputLabelProps={{
             shrink: true
+          }}
+          value={date || val.till}
+          onChange={e => {
+            change2(e.target.value);
           }}
         />
       </Grid>
