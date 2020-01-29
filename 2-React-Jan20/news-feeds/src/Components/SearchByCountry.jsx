@@ -18,6 +18,7 @@ function SearchByCountry({ val, change }) {
             change(e.target.value);
           }}
         >
+          <MenuItem value="">None</MenuItem>
           <MenuItem value="us">United States</MenuItem>
           <MenuItem value="fr">France</MenuItem>
           <MenuItem value="au">Australia</MenuItem>

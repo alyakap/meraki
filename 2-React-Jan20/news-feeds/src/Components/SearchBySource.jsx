@@ -67,6 +67,7 @@ export default class Search extends React.Component {
               this.props.change(e.target.value);
             }}
           >
+            <MenuItem value="">None</MenuItem>
             {this.state.data.map(source => (
               <MenuItem value={source.id} key={source.id}>
                 {source.name}

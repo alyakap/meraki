@@ -173,7 +173,7 @@ export default class Search extends React.Component {
             change={this.handleSearchByCountrySelection.bind(this)}
           />
           <SearchBySource
-            val={this.state.searchByCountry}
+            val={this.state.SearchBySource}
             change={this.handleSearchBySourceSelection.bind(this)}
           />
           <SearchByDateRange
