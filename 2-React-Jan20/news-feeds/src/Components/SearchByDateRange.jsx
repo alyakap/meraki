@@ -3,15 +3,22 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 
 function SearchByDateRange() {
+  const today = new Date();
+  const date =
+    today.getFullYear() +
+    "-" +
+    ("0" + (today.getMonth() + 1)).slice(-2) +
+    "-" +
+    ("0" + today.getDate()).slice(-2);
   return (
     <>
       <Grid item xs={6}>
         <TextField
-          id="date"
+          id="dateFrom"
           label="From"
-          fullWidth="true"
+          fullWidth={true}
           type="date"
-          defaultValue="2017-05-24"
+          defaultValue="2000-01-01"
           className=""
           InputLabelProps={{
             shrink: true
@@ -21,11 +28,11 @@ function SearchByDateRange() {
 
       <Grid item xs={6}>
         <TextField
-          id="date"
+          id="dateTill"
           label="To"
-          fullWidth="true"
+          fullWidth={true}
           type="date"
-          defaultValue="2017-05-24"
+          defaultValue={date}
           className=""
           InputLabelProps={{
             shrink: true

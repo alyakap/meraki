@@ -7,7 +7,6 @@ import SearchByDateRange from "./SearchByDateRange";
 import SearchByLanguage from "./SearchByLanguage";
 import SeachByDomain from "./SeachByDomain";
 import Button from "@material-ui/core/Button";
-import axios from "axios";
 
 export default class Search extends React.Component {
   constructor(props) {
@@ -42,11 +41,6 @@ export default class Search extends React.Component {
       ...this.state,
       searchBySource: str
     });
-  }
-  fillSearchBySourceOptions() {
-    axios.get(
-      `https://newsapi.org/v2/sources?language=${this.searchBySource}&apiKey=f1841cd7465044d38f5fe573565cb0b5`
-    );
   }
 
   render() {
