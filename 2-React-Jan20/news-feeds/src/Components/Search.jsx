@@ -104,7 +104,7 @@ export default class Search extends React.Component {
     axios
       .get(
         `https://newsapi.org/v2/top-headlines?country=${
-          this.state.SearchByCountry
+          this.state.searchByCountry
         }&q=${this.state.searchBar}&from=${
           this.state.searchByDateRage.from
         }&to=${
@@ -173,7 +173,7 @@ export default class Search extends React.Component {
             change={this.handleSearchByCountrySelection.bind(this)}
           />
           <SearchBySource
-            val={this.state.SearchBySource}
+            val={this.state.searchBySource}
             change={this.handleSearchBySourceSelection.bind(this)}
           />
           <SearchByDateRange

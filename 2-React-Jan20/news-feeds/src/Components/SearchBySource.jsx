@@ -6,7 +6,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import axios from "axios";
 
-export default class Search extends React.Component {
+export default class SearchBySource extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,6 @@ export default class Search extends React.Component {
       error: false,
       data: []
     };
-    console.log("heyyy", this.props.val);
   }
 
   componentDidMount() {
@@ -55,6 +54,7 @@ export default class Search extends React.Component {
   }
 
   render() {
+    console.log(this.props.val);
     return (
       <Grid item xs={6} style={{ textAlign: "center" }}>
         <FormControl fullWidth>
