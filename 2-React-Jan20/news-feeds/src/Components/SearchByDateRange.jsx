@@ -2,14 +2,14 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 
-function SearchByDateRange({ val, change1, change2 }) {
-  const today = new Date();
-  const date =
-    today.getFullYear() +
-    "-" +
-    ("0" + (today.getMonth() + 1)).slice(-2) +
-    "-" +
-    ("0" + today.getDate()).slice(-2);
+function SearchByDateRange({ val, change }) {
+  // const today = new Date();
+  // const date =
+  //   today.getFullYear() +
+  //   "-" +
+  //   ("0" + (today.getMonth() + 1)).slice(-2) +
+  //   "-" +
+  //   ("0" + today.getDate()).slice(-2);
   return (
     <>
       <Grid item xs={6}>
@@ -22,9 +22,9 @@ function SearchByDateRange({ val, change1, change2 }) {
           InputLabelProps={{
             shrink: true
           }}
-          value={date || val.from}
+          value={val.from}
           onChange={e => {
-            change1(e.target.value);
+            console.log(e.target.value);
           }}
         />
       </Grid>
@@ -39,9 +39,11 @@ function SearchByDateRange({ val, change1, change2 }) {
           InputLabelProps={{
             shrink: true
           }}
-          value={date || val.till}
+         
+          value={val.till}
+          //inputProps={{ min: ShouldBeFormatted(val.from)}}
           onChange={e => {
-            change2(e.target.value);
+            console.log(e.target.value);
           }}
         />
       </Grid>
