@@ -27,10 +27,9 @@ export default class Search extends React.Component {
   }
 
   getUrl() {
-    return `https://newsapi.org/v2/everything?sortBy
-    =${this.state.SearchByOrderBy}&q=${this.state.searchBar}&from=${
-      this.state.searchByDateRage.from
-    }&to=${
+    return `https://newsapi.org/v2/everything?sortBy=${
+      this.state.searchByOrderBy
+    }&q=${this.state.searchBar}&from=${this.state.searchByDateRage.from}&to=${
       this.state.searchByDateRage.till
     }&domains=${this.state.searchByDomain.join(",")}&language=${
       this.state.searchByLanguage

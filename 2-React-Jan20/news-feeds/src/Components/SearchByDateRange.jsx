@@ -10,7 +10,6 @@ function SearchByDateRange({ val, change }) {
   //   ("0" + (today.getMonth() + 1)).slice(-2) +
   //   "-" +
   //   ("0" + today.getDate()).slice(-2);
-  console.log(val);
   return (
     <>
       <Grid item xs={6}>
@@ -25,8 +24,7 @@ function SearchByDateRange({ val, change }) {
           }}
           value={val.from}
           onChange={e => {
-            console.log(e.target.value);
-            change(e.target.value);
+            change({ from: e.target.value, till: val.till });
           }}
         />
       </Grid>
@@ -44,8 +42,7 @@ function SearchByDateRange({ val, change }) {
           value={val.till}
           //inputProps={{ min: ShouldBeFormatted(val.from)}}
           onChange={e => {
-            console.log(e.target.value);
-            change(e.target.value);
+            change({ from: val.from, till: e.target.value });
           }}
         />
       </Grid>
