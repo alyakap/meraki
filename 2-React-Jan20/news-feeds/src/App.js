@@ -4,27 +4,75 @@ import Search from "./Components/Search";
 import Result from "./Components/Result";
 import "typeface-roboto";
 import "./App.css";
-//add state here
-/*
-     // results: {
-      //   loading: false,
-      //   error: false,
-      //   data: []
-      // }
-*/
+import axios from "axios";
 
-// state =>
-//   getArticles(url)
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.boundGetResults = this.getResult.bind(this);
+    this.state = {
+      results: {
+        loading: false,
+        error: false,
+        data: []
+      }
+    };
+  }
 
-// boundGetArt(url)
+  getResult(url) {
+    this.setState({
+      ...this.state,
+      results: {
+        ...this.state.results,
+        loading: true
+      }
+    });
+    axios
+      .get(url)
+      .then(response => {
+        if (response.data.articles) {
+          this.setState({
+            ...this.state,
+            results: {
+              ...this.state.results,
+              loading: false,
+              error: false,
+              data: [...response.data.articles]
+            }
+          });
+          console.log(this.state.results.data);
+        } else {
+          this.setState({
+            ...this.state,
+            results: {
+              ...this.state.results,
+              loading: false,
+              error: false,
+              data: []
+            }
+          });
+        }
+      })
+      .catch(error => {
+        this.setState({
+          ...this.state,
+          results: {
+            ...this.state.results,
+            loading: false,
+            error: true,
+            data: []
+          }
+        });
+        throw error;
+      });
+  }
 
-function App() {
-  return (
-    <Container maxWidth="md">
-      <Search boundGetArt />
-      <Result passResults />
-    </Container>
-  );
+  render() {
+    return (
+      <Container maxWidth="md">
+        <Search getResult={this.boundGetResults} />
+        <Result />
+      </Container>
+    );
+  }
 }
-
-export default App;

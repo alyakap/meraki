@@ -5,11 +5,11 @@ import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 
-function SearchByCountry({ val, change }) {
+function SearchByOrderBy({ val, change }) {
   return (
     <Grid item xs={6} style={{ textAlign: "center" }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Country</InputLabel>
+        <InputLabel id="demo-simple-select-label">Order By</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -19,13 +19,13 @@ function SearchByCountry({ val, change }) {
           }}
         >
           <MenuItem value="">None</MenuItem>
-          <MenuItem value="us">United States</MenuItem>
-          <MenuItem value="fr">France</MenuItem>
-          <MenuItem value="au">Australia</MenuItem>
+          <MenuItem value="popularity">Popularity</MenuItem>
+          <MenuItem value="relevancy">Relevancy</MenuItem>
+          <MenuItem value="publishedAt">Published At</MenuItem>
         </Select>
       </FormControl>
     </Grid>
   );
 }
 
-export default SearchByCountry;
+export default SearchByOrderBy;
