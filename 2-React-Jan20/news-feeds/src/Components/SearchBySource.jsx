@@ -54,7 +54,6 @@ export default class SearchBySource extends React.Component {
   }
 
   render() {
-    console.log(this.props.val);
     return (
       <Grid item xs={6} style={{ textAlign: "center" }}>
         <FormControl fullWidth>
