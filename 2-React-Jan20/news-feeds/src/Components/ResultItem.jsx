@@ -1,39 +1,44 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
+import React from "react";
+//import Grid from "@material-ui/core/Grid";
 
-import CardContent from '@material-ui/core/CardContent';
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardActions from "@material-ui/core/CardActions";
+import Typography from "@material-ui/core/Typography";
+import Card from "@material-ui/core/Card";
+import Link from "@material-ui/core/Link";
+import { makeStyles } from "@material-ui/core/styles";
 
-import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-
-
-function  ResultItem() {
-    return (
-        <Grid item xs={12}> 
-        <Card>
-          <CardContent>
-            <Typography  color="textSecondary" gutterBottom>
-              Word of the Day
-            </Typography>
-            <Typography variant="h5" component="h2">
-              somethjing
-            </Typography>
-            <Typography  color="textSecondary">
-              adjective
-            </Typography>
-            <Typography variant="body2" component="p">
-              well meaning and kindly.
-              <br />
-              something again
-            </Typography>
-          </CardContent>
-          
-        </Card>
-        
-        </Grid>
-        
-     
-    );
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+    margin: 50
+  },
+  media: {
+    height: 200
   }
-  
-export default  ResultItem;
+});
+
+function ResultItem({ obj }) {
+  const classes = useStyles();
+  return (
+    <Card className={classes.root}>
+      <CardMedia image={obj.urlToImage} className={classes.media} />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {obj.title}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {obj.content}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <Link href={obj.url} rel="noopener" target="_blank">
+          Read More
+        </Link>
+      </CardActions>
+    </Card>
+  );
+}
+
+export default ResultItem;

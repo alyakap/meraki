@@ -40,7 +40,6 @@ export default class App extends React.Component {
               data: [...response.data.articles]
             }
           });
-          console.log(this.state.results.data);
         } else {
           this.setState({
             ...this.state,
@@ -71,7 +70,7 @@ export default class App extends React.Component {
     return (
       <Container maxWidth="md">
         <Search getResult={this.boundGetResults} />
-        <Result />
+        <Result results={this.state.results} />
       </Container>
     );
   }
