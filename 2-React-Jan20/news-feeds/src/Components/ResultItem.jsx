@@ -31,7 +31,7 @@ function ResultItem({ obj }) {
           {obj.content}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions disableSpacing display="flex" justifyContent="flex-end">
         <Link href={obj.url} rel="noopener" target="_blank">
           <ChevronRightIcon />
         </Link>

@@ -16,6 +16,7 @@ function SearchByDomain({ val, change }) {
           <FormControlLabel
             control={
               <Checkbox
+                color="primary"
                 onChange={e => {
                   if (e.target.checked) {
                     val.push(e.target.value);
@@ -33,6 +34,7 @@ function SearchByDomain({ val, change }) {
           <FormControlLabel
             control={
               <Checkbox
+                color="primary"
                 onChange={e => {
                   if (e.target.checked) {
                     val.push(e.target.value);
@@ -50,6 +52,7 @@ function SearchByDomain({ val, change }) {
           <FormControlLabel
             control={
               <Checkbox
+                color="primary"
                 onChange={e => {
                   if (e.target.checked) {
                     val.push(e.target.value);
@@ -63,23 +66,6 @@ function SearchByDomain({ val, change }) {
               />
             }
             label="NYTimes"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                onChange={e => {
-                  if (e.target.checked) {
-                    val.push(e.target.value);
-                  } else {
-                    let index = val.indexOf(e.target.value);
-                    val.splice(index, 1);
-                  }
-                  change(val);
-                }}
-                value="demorgen.be"
-              />
-            }
-            label="De Morgen"
           />
         </FormGroup>
       </FormControl>

@@ -19,10 +19,21 @@ function SearchByLanguage({ val, change }) {
             change(e.target.value);
           }}
         >
-          <FormControlLabel value="en" control={<Radio />} label="English" />
-          <FormControlLabel value="nl" control={<Radio />} label="Dutch" />
-          <FormControlLabel value="fr" control={<Radio />} label="French" />
-          <FormControlLabel value="tr" control={<Radio />} label="Turkish" />
+          <FormControlLabel
+            value="en"
+            control={<Radio color="primary" />}
+            label="English"
+          />
+          <FormControlLabel
+            value="nl"
+            control={<Radio color="primary" />}
+            label="Dutch"
+          />
+          <FormControlLabel
+            value="fr"
+            control={<Radio color="primary" />}
+            label="French"
+          />
         </RadioGroup>
       </FormControl>
     </Grid>
