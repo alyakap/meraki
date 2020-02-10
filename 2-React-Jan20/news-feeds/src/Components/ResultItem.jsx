@@ -1,6 +1,4 @@
 import React from "react";
-//import Grid from "@material-ui/core/Grid";
-
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardActions from "@material-ui/core/CardActions";
@@ -8,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 const useStyles = makeStyles({
   root: {
@@ -34,7 +33,7 @@ function ResultItem({ obj }) {
       </CardContent>
       <CardActions disableSpacing>
         <Link href={obj.url} rel="noopener" target="_blank">
-          Read More
+          <ChevronRightIcon />
         </Link>
       </CardActions>
     </Card>
