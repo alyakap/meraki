@@ -125,7 +125,12 @@ export default class App extends React.Component {
   updateInput(str) {
     this.setState({
       ...this.state,
-      SearchStr: str
+      SearchStr: str,
+      searchSuggestions: {
+        loading: false,
+        error: false,
+        data: []
+      }
     });
   }
 

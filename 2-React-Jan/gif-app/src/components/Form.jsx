@@ -7,7 +7,8 @@ const Form = ({
   updateSeacrhStrValue,
   disabled,
   searchSuggestions: { loading, data },
-  updateInput
+  updateInput,
+  clearSuggestions
 }) => {
   return (
     <>
