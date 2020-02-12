@@ -2,12 +2,6 @@ import React from "react";
 var randomColor = require("randomcolor");
 
 const Suggestion = ({ itemObj, updateInput }) => {
-  // const onClickHandler = function(e) {
-  //   //e.preventDefault()
-  //   updateInput;
-  //   clearSuggestions();
-  //   //console.log(GifObj.id)
-  // };
   let color = randomColor();
   var divStyle = {
     background: color,
