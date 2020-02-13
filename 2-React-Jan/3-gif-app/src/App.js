@@ -26,55 +26,23 @@ export default class App extends React.Component {
     };
   }
 
-  updateSeacrhStrValue(str) {
-    this.setState({
-      ...this.state,
-      SearchStr: str
-    });
-    axios
-      .get(`https://api.tenor.com/v1/autocomplete?q=${str}&key=LIVDSRZULELA`)
-      .then(response => {
-        if (response.data.results) {
-          this.setState({
-            ...this.state,
-            searchSuggestions: {
-              loading: false,
-              error: false,
-              data: [...response.data.results]
-            }
-          });
-        } else {
-          this.setState({
-            ...this.state,
-            searchSuggestions: {
-              error: false,
-              loading: false,
-              data: []
-            }
-          });
-        }
-      })
-      .catch(error => {
-        this.setState({
-          ...this.state,
-          searchSuggestions: {
-            ...this.state.searchSuggestions,
-            error: true,
-            loading: false
-          }
-        });
-        throw error;
-      });
-  }
   setChosenGif(id) {
     this.setState({
       ...this.state,
       chosenGif: id
     });
   }
-  getGif() {
+  getGif(e) {
+    if (e) {
+      e.preventDefault()
+    }
     this.setState({
       ...this.state,
+      searchSuggestions: {
+        loading: false,
+        error: false,
+        data: []
+      },
       gifs: {
         ...this.state.gifs,
         loading: true,
@@ -122,17 +90,104 @@ export default class App extends React.Component {
       });
   }
 
-  updateInput(str) {
+  //updating the input field and clearing the suggestions
+  updateInput(e) {
+    let str;
+    if (e.target.tagName === "INPUT") {
+      str = e.target.value;
+      const len = str.length;
+      //setting searchString in state
+
+      if (len <= 3) {
+        //empty suggestions
+        this.setState({
+          ...this.state,
+          SearchStr: str,
+        }, () => {
+          this.emptySuggestions(str)
+        });
+      } else {
+        //get suggestions
+        this.setState({
+          ...this.state,
+          SearchStr: str
+        }, () => { this.getSuggestions(str) })
+      }
+    } else {
+      str = e.target.textContent
+      this.setState({
+        ...this.state,
+        SearchStr: str,
+      }, () => {
+        this.getGif()
+      })
+    }
+
+  }
+
+  emptySuggestions(str) {
+    // console.log('empty: ', this.state.SearchStr)
+    // this.setState((state, props) => {
+    //   console.log('correct', state.SearchStr)
+    //   console.log('props', props)
+    // })
+
+
     this.setState({
       ...this.state,
-      SearchStr: str,
       searchSuggestions: {
+        ...this.state.searchSuggestions,
         loading: false,
         error: false,
         data: []
       }
     });
   }
+
+  getSuggestions(str) {
+    this.setState({
+      ...this.state,
+      searchSuggestions: {
+        ...this.state.searchSuggestions,
+        loading: true
+      }
+    });
+    axios
+      .get(`https://api.tenor.com/v1/search_suggestions?q=${str}&key=LIVDSRZULELA`)
+      .then(response => {
+        if (response.data.results) {
+          this.setState({
+            ...this.state,
+            searchSuggestions: {
+              loading: false,
+              error: false,
+              data: [...response.data.results]
+            }
+          });
+        } else {
+          this.setState({
+            ...this.state,
+            searchSuggestions: {
+              error: false,
+              loading: false,
+              data: []
+            }
+          });
+        }
+      })
+      .catch(error => {
+        this.setState({
+          ...this.state,
+          searchSuggestions: {
+            ...this.state.searchSuggestions,
+            error: true,
+            loading: false
+          }
+        });
+        throw error;
+      });
+  }
+
 
   clearChosenGif() {
     this.setState({
@@ -150,22 +205,21 @@ export default class App extends React.Component {
             clearChosenGif={this.clearChosenGif.bind(this)}
           />
         ) : (
-          <>
-            <Form
-              disabled={this.state.gifs.disabled}
-              gifSearchStr={this.state.SearchStr}
-              getGif={this.getGif.bind(this)}
-              updateSeacrhStrValue={this.updateSeacrhStrValue.bind(this)}
-              searchSuggestions={this.state.searchSuggestions}
-              updateInput={this.updateInput.bind(this)}
-            />
-            <GifGrid
-              gifs={this.state.gifs}
-              pageLoad={this.state.pageLoad}
-              setChosenGif={this.setChosenGif.bind(this)}
-            />
-          </>
-        )}
+            <>
+              <Form
+                disabled={this.state.gifs.disabled}
+                gifSearchStr={this.state.SearchStr}
+                getGif={this.getGif.bind(this)}
+                searchSuggestions={this.state.searchSuggestions}
+                updateInput={this.updateInput.bind(this)}
+              />
+              <GifGrid
+                gifs={this.state.gifs}
+                pageLoad={this.state.pageLoad}
+                setChosenGif={this.setChosenGif.bind(this)}
+              />
+            </>
+          )}
       </div>
     );
   }

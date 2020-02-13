@@ -1,4 +1,5 @@
 import React from "react";
+
 var randomColor = require("randomcolor");
 
 const Suggestion = ({ itemObj, updateInput }) => {
@@ -11,14 +12,12 @@ const Suggestion = ({ itemObj, updateInput }) => {
   };
 
   return (
-    <button
-      onClick={() => {
-        updateInput(itemObj);
-      }}
+    <li><button
+      onClick={updateInput}
       style={divStyle}
     >
       {itemObj}
-    </button>
+    </button></li>
   );
 };
 export default Suggestion;

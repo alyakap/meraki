@@ -1,6 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import axios from 'axios';
-
 
 export default class ChosenGif extends React.Component{
     constructor(props) {
@@ -72,3 +72,7 @@ export default class ChosenGif extends React.Component{
 
 }
 
+ChosenGif.propTypes = {
+    id :  PropTypes.string.isRequired,
+    clearChosenGif: PropTypes.func.isRequired
+}

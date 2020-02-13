@@ -4,7 +4,6 @@ import Suggestion from "./Suggestion";
 const Form = ({
   getGif,
   gifSearchStr,
-  updateSeacrhStrValue,
   disabled,
   searchSuggestions: { loading, data },
   updateInput,
@@ -13,17 +12,12 @@ const Form = ({
   return (
     <>
       <form
-        onSubmit={e => {
-          e.preventDefault();
-          getGif();
-        }}
+        onSubmit={getGif}
       >
         <input
           type="text"
           value={gifSearchStr}
-          onChange={e => {
-            updateSeacrhStrValue(e.target.value);
-          }}
+          onChange={updateInput}
         />
         <button type="submit" disabled={disabled}>
           Search
