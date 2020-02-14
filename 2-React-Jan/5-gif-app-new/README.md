@@ -1,10 +1,6 @@
-# Gif Picker App
+## Access the app->
 
-You can search for gif from Tenor's Website Database with search suggesstion
-
-## Available Scripts
-
-In the project directory, you can run:
+[Live version](http://gifapp2.surge.sh)
 
 ### `npm start`
 

@@ -1,11 +1,18 @@
 import React from "react";
 import InputArea from "./InputArea";
 import Suggestions from "./Suggestions";
-const Form = ({ updateSearchStr, getGifs, disabled }) => {
+//import SuggestionItem from "./SuggestionItem";
+const Form = ({
+  updateSearchStr,
+  getGifs,
+  disabled,
+  searchStr,
+  updateInput
+}) => {
   return (
     <>
       <form
-        className="form-inline md-form mr-auto mb-4"
+        className="form-inline"
         onSubmit={e => {
           e.preventDefault();
           getGifs();
@@ -13,7 +20,11 @@ const Form = ({ updateSearchStr, getGifs, disabled }) => {
       >
         <InputArea updateSearchStr={updateSearchStr} disabled={disabled} />
       </form>
-      <Suggestions />
+      {searchStr.length >= 3 ? (
+        <Suggestions searchStr={searchStr} updateInput={updateInput} />
+      ) : (
+        <></>
+      )}
     </>
   );
 };

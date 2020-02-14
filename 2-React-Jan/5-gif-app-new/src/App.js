@@ -23,7 +23,22 @@ export default class App extends React.Component {
   updateSearchStr = event => {
     this.setState({ searchStr: event.target.value });
   };
-  getGifs = () => {
+  //updating the input field and clearing the suggestions
+  updateInput = e => {
+    this.setState(
+      {
+        ...this.state,
+        searchStr: e.target.textContent
+      },
+      () => {
+        this.getGifs();
+      }
+    );
+  };
+  getGifs = e => {
+    if (e) {
+      e.preventDefault();
+    }
     this.setState({
       ...this.state,
       gifs: {
@@ -70,6 +85,10 @@ export default class App extends React.Component {
         });
         throw error;
       });
+    this.setState({
+      ...this.state,
+      SearchStr: ""
+    });
   };
   setChosenGif = id => {
     this.setState({
@@ -97,6 +116,8 @@ export default class App extends React.Component {
               updateSearchStr={this.updateSearchStr}
               getGifs={this.getGifs}
               disabled={this.state.gifs.disabled}
+              searchStr={this.state.searchStr}
+              updateInput={this.updateInput}
             />
             <GifGrid
               gifs={this.state.gifs}
