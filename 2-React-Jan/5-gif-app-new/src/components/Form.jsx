@@ -9,13 +9,19 @@ const Form = ({
   searchStr,
   updateInput
 }) => {
+  const clearForm = () => {
+    document.getElementById("mainForm").reset();
+  };
   return (
     <>
       <form
+        id="mainForm"
         className="form-inline"
         onSubmit={e => {
           e.preventDefault();
           getGifs();
+          clearForm();
+          //this.mainInput.value = "";
         }}
       >
         <InputArea updateSearchStr={updateSearchStr} disabled={disabled} />
