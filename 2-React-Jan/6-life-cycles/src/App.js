@@ -1,14 +1,17 @@
 import React from "react";
 import Firstname from "./components/Firstname";
 function App() {
-  const personObj = {
+  const person = {
     name: "Hanim",
     lastname: "Kapusuz",
     age: 34
   };
   return (
     <>
-      <Firstname personObj={personObj} />
+      <Firstname person={person} />
+      <button>David</button>
+      <button>38</button>
+      <button>Toggle</button>
     </>
   );
 }

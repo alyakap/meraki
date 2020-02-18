@@ -6,6 +6,6 @@ export default class Firstname extends Component {
     this.state = {};
   }
   render() {
-    return <h1>{this.props.personObj.name}</h1>;
+    return <h1>{this.props.person.name}</h1>;
   }
 }
